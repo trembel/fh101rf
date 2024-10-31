@@ -1,0 +1,1043 @@
+---
+name: FH101RF
+author: "Joimfeld"
+defaults:
+  layout_bitwidth: 8
+
+enums:
+  SAMPLE_RATE:
+    enum:
+      _32_768:
+        val: 0x0
+        doc: 32768 Hz. 0.977ms code-sequence-duration.
+      _16_384:
+        val: 0x1
+        doc: 16384 Hz. 1.957ms code-sequence-duration.
+      _8_192:
+        val: 0x2
+        doc: 32768 Hz. 0.977ms code-sequence-duration.
+      _4_096:
+        val: 0x3
+        doc: 4096 Hz. 7.813ms code-sequence-duration.
+      _2_048:
+        val: 0x4
+        doc: 2048 Hz. 15.625ms code-sequence-duration.
+      _1_024:
+        val: 0x5
+        doc: 1024 Hz. 31.25ms code-sequence-duration.
+      _0_512:
+        val: 0x6
+        doc: 512 Hz. 62.5ms code-sequence-duration.
+      _0_256:
+        val: 0x7
+        doc: 256 Hz. 125ms code-sequence-duration.
+
+  BAND:
+    enum:
+      ALL_OFF:
+        val: 0x0
+        doc: All bands off.
+      BAND_433:
+        val: 0x1
+        doc: 433MHz band on.
+      BAND_868:
+        val: 0x2
+        doc: 868MHz band on.
+      BAND_2G4:
+        val: 0x4
+        doc: 2.4GHz band on.
+
+  BRANCH:
+    enum:
+      ALL_OFF:
+        val: 0x0
+        doc: All branches off.
+      WEAK:
+        val: 0x1
+        doc: Weak branch on.
+      MEDIUM:
+        val: 0x2
+        doc: Medium branch on (+8dB).
+      STRONG:
+        val: 0x4
+        doc: Strong branch on (+16dB).
+
+  IRQ_SOURCE:
+    enum:
+      ID_MATCH:
+        val: 0x01
+        doc: The 16-bit ID in FDD mode matches.
+      FIFO_OVERFLOW:
+        val: 0x02
+        doc: FIFO overflow.
+      FIFO_FULL:
+        val: 0x04
+        doc: FIFO buffer full.
+      CORREL_MATCH:
+        val: 0x08
+        doc: OOK data matches the correlation sequence.
+      ID_MATCH_AND_FIFO_FULL:
+        val: 0x10
+        doc: 16-bit ID in FDD mode matches and FIFO buffer full.
+      ID_MATCH_AND_LDR:
+        val: 0x20
+        doc: 16-bit ID in FDD mode matches and LDR was entered.
+      RTC_TIMER_ALARM:
+        val: 0x40
+        doc: RTC timer alarm.
+      CYCLIC_TIMER_ALARM:
+        val: 0x80
+        doc: Cyclic timer alarm.
+
+  FDD_MODE:
+    enum:
+      SLOW:
+        val: 0x0
+        doc: Slow mode.
+      FAST:
+        val: 0x1
+        doc: Fast mode.
+
+  EXIT_COND:
+    enum:
+      NO_REASON:
+        val: 0x0
+        doc: Initial state.
+      TIMEOUT:
+        val: 0x1
+        doc: No fast code A or B received.
+      ID_FAIL:
+        val: 0x2
+        doc: 16-bit ID did not match.
+      FORCE_QUIT:
+        val: 0x3
+        doc: Force quit was set.
+  
+  FIFO_LEN:
+    enum:
+      _16_BIT:
+        val: 0x0
+        doc: 16-bit FIFO.
+      _24_BIT:
+        val: 0x1
+        doc: 24-bit FIFO.
+      _32_BIT:
+        val: 0x2
+        doc: 32-bit FIFO.
+      _40_BIT:
+        val: 0x3
+        doc: 40-bit FIFO.
+
+registers:
+  NFA433_SLOW: !Register
+    adr: 0x00
+    reset_val: 0x05
+    doc: Set the sample-rate for preamble-listening for the 433MHz band slow in mode.
+    layout: !Layout
+      DATA:
+        bits: [0-2]
+        access: [R, W]
+        accepts: !SharedEnum SAMPLE_RATE
+
+  NFA433_FAST: !Register
+    adr: 0x01
+    reset_val: 0x00
+    doc: Set the sample-rate for preamble-listening for the 433MHz band fast in mode.
+    layout: !Layout
+      DATA:
+        bits: [0-2]
+        access: [R, W]
+        accepts: !SharedEnum SAMPLE_RATE
+
+  NFA868_SLOW: !Register
+    adr: 0x02
+    reset_val: 0x05
+    doc: Set the sample-rate for preamble-listening for the 868MHz band slow in mode.
+    layout: !Layout
+      DATA:
+        bits: [0-2]
+        access: [R, W]
+        accepts: !SharedEnum SAMPLE_RATE
+
+  NFA868_FAST: !Register
+    adr: 0x03
+    reset_val: 0x00
+    doc: Set the sample-rate for preamble-listening for the 868MHz band fast in mode.
+    layout: !Layout
+      DATA:
+        bits: [0-2]
+        access: [R, W]
+        accepts: !SharedEnum SAMPLE_RATE
+
+  NFA2G4_SLOW: !Register
+    adr: 0x04
+    reset_val: 0x05
+    doc: Set the sample-rate for preamble-listening for the 2.4GHz band in slow mode.
+    layout: !Layout
+      DATA:
+        bits: [0-2]
+        access: [R, W]
+        accepts: !SharedEnum SAMPLE_RATE
+
+  NFA2G4_FAST: !Register
+    adr: 0x05
+    reset_val: 0x00
+    doc: Set the sample-rate for preamble-listening for the 2.4GHz band in fast mode.
+    layout: !Layout
+      DATA:
+        bits: [0-2]
+        access: [R, W]
+        accepts: !SharedEnum SAMPLE_RATE
+
+  CALIB_STATUS: !Register
+    adr: 0x06
+    reset_val: 0x00
+    doc: Indicates whether calibration is in process.
+    layout: !Layout
+      OFFSET_CAL:
+        bits: [3]
+        access: [R]
+        doc: Offset calubration in progress.
+        accepts: !Bool
+      SPG_CAL:
+        bits: [2]
+        access: [R]
+        doc: SPG calibration in progress.
+        accepts: !Bool
+      LCO_CAL:
+        bits: [1]
+        access: [R]
+        doc: LCO calibration in progress.
+        accepts: !Bool
+      CAL:
+        bits: [0]
+        access: [R]
+        doc: Calibration in progress.
+        accepts: !Bool
+
+  CALIB_CTRL: !Register
+    adr: 0x07
+    reset_val: 0x0E
+    doc: Controls the calibration process.
+    layout: !Layout
+      OFFSET_CAL:
+        bits: [3]
+        access: [W]
+        doc: Start offset calibration.
+        accepts: !Bool
+      SPG_CAL:
+        bits: [2]
+        access: [W]
+        doc: Start SPG calibration.
+        accepts: !Bool
+      LCO_CAL:
+        bits: [1]
+        access: [W]
+        doc: Start LCO calibration.
+        accepts: !Bool
+      CAL:
+        bits: [0]
+        access: [W]
+        doc: Start calibration.
+        accepts: !Bool
+
+  N_SPG_TARGET: !Register
+    adr: 0x09
+    reset_val: 0x31
+    doc: Set to 0x46 during SPG calibration.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R, W]
+        accepts: !UInt
+
+
+  N_LCO_TARGET_433_HIGH: !Register
+    adr: 0x0B
+    reset_val: 0x00
+    doc: Sets the target freqency for this band. Values between 3304 and 3891.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [W]
+        accepts: !UInt
+
+  N_LCO_TARGET_433_LOW: !Register
+    adr: 0x0C
+    reset_val: 0x00
+    doc: Sets the target freqency for this band.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [W]
+        accepts: !UInt
+
+  N_LCO_TARGET_868_HIGH: !Register
+    adr: 0x0D
+    reset_val: 0x00
+    doc: Sets the target freqency for this band. Values between 3281 and 3738.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [W]
+        accepts: !UInt
+
+  N_LCO_TARGET_868_LOW: !Register
+    adr: 0x0E
+    reset_val: 0x00
+    doc: Sets the target freqency for this band.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [W]
+        accepts: !UInt
+
+  N_LCO_TARGET_2G4_HIGH: !Register
+    adr: 0x0F
+    reset_val: 0x00
+    doc: Sets the target freqency for this band. Values between 4482 and 4833.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [W]
+        accepts: !UInt
+
+  N_LCO_TARGET_2G4_LOW: !Register
+    adr: 0x10
+    reset_val: 0x00
+    doc: Sets the target freqency for this band.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [W]
+        accepts: !UInt
+
+  LCO_FREQ_433_HIGH: !Register
+    adr: 0x11
+    reset_val: 0x00
+    doc: Holds the current frequency of the band.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  LCO_FREQ_433_LOW: !Register
+    adr: 0x12
+    reset_val: 0x00
+    doc: Holds the current frequency of the band.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  LCO_FREQ_868_HIGH: !Register
+    adr: 0x13
+    reset_val: 0x00
+    doc: Holds the current frequency of the band.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  LCO_FREQ_868_LOW: !Register
+    adr: 0x14
+    reset_val: 0x00
+    doc: Holds the current frequency of the band.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  LCO_FREQ_2G4_HIGH: !Register
+    adr: 0x15
+    reset_val: 0x00
+    doc: Holds the current frequency of the band.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  LCO_FREQ_2G4_LOW: !Register
+    adr: 0x16
+    reset_val: 0x00
+    doc: Holds the current frequency of the band.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  D_CORNER_CTRL: !Register
+    adr: 0x23
+    reset_val: 0x00
+    doc: Set to 0x02 at power-up.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R, W]
+        accepts: !UInt
+
+  BAND_BRANCH_CTRL: !Register
+    adr: 0x24
+    reset_val: 0x77
+    doc: Selects the active bands.
+    layout: !Layout
+      BRANCH:
+        bits: [2-0]
+        access: [R, W]
+        doc: Selects the active detection branches.
+        accepts: !SharedEnum BRANCH
+      BANDS:
+        bits: [4-6]
+        access: [R, W]
+        doc: Selects the active bands.
+        accepts: !SharedEnum BAND
+
+  # TODO: Enum ?
+  CODE_SELECT: !Register
+    adr: 0x28
+    reset_val: 0x10
+    doc: Selects the correlation patterns for code A and B.
+    layout: !Layout
+      A:
+        bits: [0-3]
+        access: [W]
+        doc: Selects the correlation pattern for code A.
+        accepts: !UInt
+      B:
+        bits: [4-7]
+        access: [W]
+        doc: Selects the correlation pattern for code B.
+        accepts: !UInt
+
+  KORREL_THRESH_A: !Register
+    adr: 0x29
+    reset_val: 0x1A
+    doc: Sets the threshold for a code A match. Between 0x19 and 0x1E.
+    layout: !Layout
+      DATA:
+        bits: [0-4]
+        access: [W]
+        accepts: !UInt
+
+  KORREL_THRESH_B: !Register
+    adr: 0x2A
+    reset_val: 0x1A
+    doc: Sets the threshold for a code B match. Between 0x19 and 0x1E.
+    layout: !Layout
+      DATA:
+        bits: [0-4]
+        access: [W]
+        accepts: !UInt
+
+  KORREL_STATE: !Register
+    adr: 0x2B
+    reset_val: 0xC0
+    doc:
+    layout: !Layout
+      BRANCH:
+        bits: [0-7]
+        access: [R]
+        accepts: !SharedEnum BRANCH
+
+  KORREL_VAL: !Register
+    adr: 0x2C
+    reset_val: 0x00
+    doc: Indicates the match level, a value of 15 indicates no bit errors, a value of 0 indicates 15 bit errors.
+    layout: !Layout
+      A:
+        bits: [0-3]
+        access: [R]
+        accepts: !UInt
+      B:
+        bits: [4-7]
+        access: [R]
+        accepts: !UInt
+
+  FDD_ENABLE: !Register
+    adr: 0x2D
+    reset_val: 0x07
+    doc: Enable the fast data decoder for a given band.
+    layout: !Layout
+      BAND:
+        bits: [0-2]
+        access: [R, W]
+        accepts: !SharedEnum BAND
+
+  FDD_ACTIVE: !Register
+    adr: 0x2E
+    reset_val: 0x00
+    doc: Sets the FDD mode for each band.
+    layout: !Layout
+      BAND_2G4:
+        bits: [0]
+        access: [W]
+        accepts: !SharedEnum FDD_MODE
+      BAND_868:
+        bits: [1]
+        access: [W]
+        accepts: !SharedEnum FDD_MODE
+      BAND_433:
+        bits: [2]
+        access: [R]
+        accepts: !SharedEnum FDD_MODE
+
+  FORCE_QUIT: !Register
+    adr: 0x2F
+    reset_val: 0x00
+    doc: Forces the specified band to quit fast mode immediately.
+    layout: !Layout
+      BAMD:
+        bits: [0-2]
+        access: [W]
+        accepts: !SharedEnum BAND
+
+  FDD_EXIT_COND: !Register
+    adr: 0x30
+    reset_val: 0x00
+    doc: Holds the FDD exit condition for all the bands.
+    layout: !Layout
+      BAND_433:
+        bits: [0-1]
+        access: [R]
+        accepts: !SharedEnum EXIT_COND
+      BAND_868:
+        bits: [2-3]
+        access: [R]
+        accepts: !SharedEnum EXIT_COND
+      BAND_2G4:
+        bits: [4-5]
+        access: [R]
+        accepts: !SharedEnum EXIT_COND
+
+  IRQ_SELECT: !Register
+    adr: 0x31
+    reset_val: 0x01
+    doc: Selects the interrupt sources.
+    layout: !Layout
+      IRQ_SELECT:
+        bits: [0-7]
+        access: [R, W]
+        accepts: !SharedEnum IRQ_SOURCE
+
+  IRQ_STATUS: !Register
+    adr: 0x32
+    reset_val: 0x00
+    doc: Holds the status of the IRQ events.
+    layout: !Layout
+      IRQ_STATUS:
+        bits: [0-7]
+        access: [R]
+        accepts: !SharedEnum IRQ_SOURCE
+
+  IRQ_CLR: !Register
+    adr: 0x33
+    reset_val: 0x00
+    doc: Resets the corresponding IRQ event bit.
+    layout: !Layout
+      IRQ_CLR:
+        bits: [0-7]
+        access: [W]
+        accepts: !SharedEnum IRQ_SOURCE
+
+  IRQ_SET: !Register
+    adr: 0x34
+    reset_val: 0x00
+    doc: Sets the corresponding IRQ event bit for debugging.
+    layout: !Layout
+      IRQ_SET:
+        bits: [0-7]
+        access: [W]
+        accepts: !SharedEnum IRQ_SOURCE
+
+  ID_HIGH: !Register
+    adr: 0x35
+    reset_val: 0x7D
+    doc: Sets the high byte of the match ID.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R, W]
+        accepts: !UInt
+
+  ID_LOW: !Register
+    adr: 0x36
+    reset_val: 0xA8
+    doc: Sets the low byte of the match ID.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R, W]
+        accepts: !UInt
+
+  IDM_ENABLE: !Register
+    adr: 0x37
+    reset_val: 0x07
+    doc: Enables the ID match for a given band.
+    layout: !Layout
+      BAND:
+        bits: [0-2]
+        access: [R, W]
+        accepts: !SharedEnum BAND
+
+  IDM_CTRL: !Register
+    adr: 0x38
+    reset_val: 0x00
+    doc: Slect the type of ID's accepted by the receiver.
+    layout: !Layout
+      CTRL:
+        bits: [0-1]
+        access: [R, W]
+        accepts: !Enum
+          IND_ONLY:
+            val: 0x0
+          IND_GROUP:
+            val: 0x1
+          BROAD_ONLY:
+            val: 0x2
+          IND_GROUP_BROAD:
+            val: 0x3
+
+  IDM_CLR: !Register
+    adr: 0x39
+    reset_val: 0x00
+    doc: Clear the FDD_EXIT_COND register.
+    layout: !Layout
+      BRANCH:
+        bits: [0]
+        access: [W]
+        accepts: !Bool
+
+  IDM_BAND: !Register
+    adr: 0x3A
+    reset_val: 0x03
+    doc: Indicates the frequency band of the ID match event.
+    layout: !Layout
+      DATA:
+        bits: [0-1]
+        access: [R, W]
+        accepts: !Enum
+          BAND_433:
+            val: 0x1
+          BAND_868:
+            val: 0x2
+          BAND_2G4:
+            val: 0x3
+
+  IDM_REASON: !Register
+    adr: 0x3B
+    reset_val: 0x00
+    doc: Indicates the type of ID match event.
+    layout: !Layout
+      REASON:
+        bits: [0-1]
+        access: [R]
+        accepts: !Enum
+          IND_MATCH:
+            val: 0x1
+          GROUP_MATCH:
+            val: 0x2
+          BROAD_MATCH:
+            val: 0x3
+
+  # RTC Section skipped
+
+  FIFO_LENGTH: !Register
+    adr: 0x56
+    reset_val: 0x14
+    doc: Selects the FIFO length for each band.
+    layout: !Layout
+      BAND_433:
+        bits: [0-1]
+        access: [W]
+        accepts: !SharedEnum FIFO_LEN
+      BAND_868:
+        bits: [2-3]
+        access: [W]
+        accepts: !SharedEnum FIFO_LEN
+      BAND_2G4:
+        bits: [4-5]
+        access: [W]
+        accepts: !SharedEnum FIFO_LEN
+
+  FIFO_COUNT_433: !Register
+    adr: 0x57
+    reset_val: 0x00
+    doc: Number of bits in the FIFO buffer for this band.
+    layout: !Layout
+      DATA:
+        bits: [0-5]
+        access: [R, W]
+        accepts: !UInt
+
+  FIFO_COUNT_868: !Register
+    adr: 0x58
+    reset_val: 0x00
+    doc: Number of bits in the FIFO buffer for this band.
+    layout: !Layout
+      DATA:
+        bits: [0-5]
+        access: [R, W]
+        accepts: !UInt
+
+  FIFO_COUNT_2G4: !Register
+    adr: 0x59
+    reset_val: 0x00
+    doc: Number of bits in the FIFO buffer for this band.
+    layout: !Layout
+      DATA:
+        bits: [0-5]
+        access: [R, W]
+        accepts: !UInt
+
+  RX_FIFO_5_433: !Register
+    adr: 0x5A
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_4_433: !Register
+    adr: 0x5B
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_3_433: !Register
+    adr: 0x5C
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_2_433: !Register
+    adr: 0x5D
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_1_433: !Register
+    adr: 0x5E
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_0_433: !Register
+    adr: 0x5F
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_5_868: !Register
+    adr: 0x60
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_4_868: !Register
+    adr: 0x61
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_3_868: !Register
+    adr: 0x62
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_2_868: !Register
+    adr: 0x63
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_1_868: !Register
+    adr: 0x64
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_0_868: !Register
+    adr: 0x65
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_5_2G4: !Register
+    adr: 0x66
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_4_2G4: !Register
+    adr: 0x67
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_3_2G4: !Register
+    adr: 0x68
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_2_2G4: !Register
+    adr: 0x69
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_1_2G4: !Register
+    adr: 0x6A
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  RX_FIFO_0_2G4: !Register
+    adr: 0x6B
+    reset_val: 0x00
+    doc: The FIFO buffer, _5 is filled first.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
+
+  ACTUAL_NFA_433: !Register
+    adr: 0x6C
+    reset_val: 0x25
+    doc: This register contains the actual NFA value that is currently valid for 433 MHz data reception.
+    layout: !Layout
+      SLOW:
+        bits: [0-2]
+        access: [R]
+        accepts: !SharedEnum SAMPLE_RATE
+      FAST:
+        bits: [4-6]
+        access: [R]
+        accepts: !SharedEnum SAMPLE_RATE
+
+  ACTUAL_NFA_868: !Register
+    adr: 0x6D
+    reset_val: 0x15
+    doc: This register contains the actual NFA value that is currently valid for 868 MHz data reception.
+    layout: !Layout
+      SLOW:
+        bits: [0-2]
+        access: [R]
+        accepts: !SharedEnum SAMPLE_RATE
+      FAST:
+        bits: [4-6]
+        access: [R]
+        accepts: !SharedEnum SAMPLE_RATE
+
+  ACTUAL_NFA_2G4: !Register
+    adr: 0x6E
+    reset_val: 0x25
+    doc: This register contains the actual NFA value that is currently valid for 2.4 GHz data reception.
+    layout: !Layout
+      SLOW:
+        bits: [0-2]
+        access: [R]
+        accepts: !SharedEnum SAMPLE_RATE
+      FAST:
+        bits: [4-6]
+        access: [R]
+        accepts: !SharedEnum SAMPLE_RATE
+
+  GENPURP_1: !Register
+    adr: 0x71
+    reset_val: 0x00
+    doc: 8 bits free to use for read/write.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [R, W]
+        accepts: !UInt
+
+  XTAL_OSC_CTRL: !Register
+    adr: 0x73
+    reset_val: 0x01
+    doc: Enables the built-in crystal oscillator driving a 2-pin crystal device.
+    layout: !Layout
+      DATA:
+        bits: [1]
+        access: [W]
+        accepts: !Bool
+
+  LDO_XTAL_CTRL: !Register
+    adr: 0x74
+    reset_val: 0x03
+    doc: Controls the LDO and the crystal oscillator.
+    layout: !Layout
+      INT:
+        bits: [0-1]
+        access: [W]
+        doc: Do not change.
+        accepts: !UInt
+      XTAL_OSC_BYP:
+        bits: [3]
+        access: [W]
+        doc: Set this if  an external clock source is used.
+        accepts: !Bool
+      LDO_ENA_NFA:
+        bits: [5]
+        access: [W]
+        doc: Deactivates the internal LDO, set to 1 to use external source.
+        accepts: !Bool
+
+  MUX_D_OUT_SEL: !Register
+    adr: 0x75
+    reset_val: 0x0F
+    doc: Selects the signal routed to the GPO1 and GPO2 pins.
+    layout: !Layout
+      OUT:
+        bits: [0-3]
+        access: [W]
+        accepts: !Enum
+          RX_2G4:
+            val: 0x0
+            doc: CLK on GPO1 and DATA on GPO2.
+          RX_868:
+            val: 0x1
+            doc: CLK on GPO1 and DATA on GPO2.
+          RX_433:
+            val: 0x2
+            doc: CLK on GPO1 and DATA on GPO2.
+          WUP_A_B_2G4:
+            val: 0x3
+            doc: WUP_A on GPO1 and WUP_B on GPO2.
+          IDM_WUP_A_433:
+            val: 0x6
+            doc: IDM on GPO1 and WUP_A on GPO2.
+          WUP_A_B_868:
+            val: 0x7
+            doc: WUP_A on GPO1 and WUP_B on GPO2.
+          WUP_A_433_RX_ACTIVE:
+            val: 0x8
+            doc: WUP_A on GPO1 and RX_ACTIVE on GPO2.
+          WUP_A_868_RX_ACTIVE:
+            val: 0x9
+            doc: WUP_A on GPO1 and RX_ACTIVE on GPO2.
+          WUP_A_2G4_RX_ACTIVE:
+            val: 0xA
+            doc: WUP_A on GPO1 and RX_ACTIVE on GPO2.
+          CLK32_IRQ_EVENT:
+            val: 0xE
+            doc: CLK32 on GPO1 and IRQ_EVENT on GPO2.
+          IRQ_EVENT_1:
+            val: 0xF
+            doc: IRQ_EVENT on GPO1 and logic high on GPO2.
+          
+
+  LC_TG_ENA: !Register
+    adr: 0x76
+    reset_val: 0x01
+    doc: Set to 0x00 during power-up.
+    layout: !Layout
+      DATA:
+        bits: [0]
+        access: [W]
+        accepts: !Bool
+
+  XTAL_GOOD: !Register
+    adr: 0x77
+    reset_val: 0x00
+    doc: Reads as 1 if the clock source is stable.
+    layout: !Layout
+      DATA:
+        bits: [0]
+        access: [R]
+        accepts: !Bool
+
+  KORREL_SV_CLEAR: !Register
+    adr: 0x7C
+    reset_val: 0x00
+    doc: Set to clear the KORREL_STATE and KORREL_VAL registers.
+    layout: !Layout
+      DATA:
+        bits: [0]
+        access: [W]
+        accepts: !Bool
+
+  VERSION: !Register
+    adr: 0x7F
+    reset_val: 0x41
+    doc: Holds the version number of the IC.
+    layout: !Layout
+      VERSION_NUMBER:
+        bits: [0-7]
+        access: [R]
+        accepts: !UInt
