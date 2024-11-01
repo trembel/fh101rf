@@ -1408,6 +1408,16 @@ registers:
         access: [R]
         accepts: !Bool
 
+  COMP_THRESH_W: !Register
+    adr: 0x78
+    reset_val: 0x00
+    doc: Set this register to 0xA before executing the comparator calibration.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [W]
+        accepts: !UInt
+
   KORREL_SV_CLEAR: !Register
     adr: 0x7C
     reset_val: 0x00

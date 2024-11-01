@@ -2097,6 +2097,96 @@ static inline int fh101rf_code_select_try_unpack_be(const uint8_t val[1], struct
 }
 
 // =============================================================================
+// ==== COMP_THRESH_W Register =================================================
+// =============================================================================
+// Set this register to 0xA before executing the comparator calibration.
+// Fields:
+//  - [7:0] DATA (uint)
+
+#define FH101RF_COMP_THRESH_W_ADDRESS  (0x78U) //!< COMP_THRESH_W register address
+#define FH101RF_COMP_THRESH_W_RESET_LE {0x0U}  //!< COMP_THRESH_W register reset value
+#define FH101RF_COMP_THRESH_W_RESET_BE {0x0U}  //!< COMP_THRESH_W register reset value
+
+// Register Layout Struct:
+
+/**
+ * @brief Set this register to 0xA before executing the comparator calibration.
+ * @note use pack/unpack functions for conversion to/from packed binary value
+ */
+struct fh101rf_comp_thresh_w {
+  uint8_t data;
+};
+
+// Layout struct conversion functions:
+
+/**
+ * @brief Convert @ref struct fh101rf_comp_thresh_w struct to packed little-endian value.
+ * @note use pack/unpack functions for conversion to/from packed binary value
+ */
+static inline void fh101rf_comp_thresh_w_pack_le(const struct fh101rf_comp_thresh_w *r, uint8_t val[1]) {
+  // DATA @ comp_thresh_w[7:0]:
+  val[0] &= (uint8_t)~0xFFU;
+  val[0] |= (uint8_t)(((uint8_t)r->data) & 0xFFU);
+}
+
+/**
+ * @brief Convert @ref struct fh101rf_comp_thresh_w struct to packed big-endian value.
+ * @note use pack/unpack functions for conversion to/from packed binary value
+ */
+static inline void fh101rf_comp_thresh_w_pack_be(const struct fh101rf_comp_thresh_w *r, uint8_t val[1]) {
+  // DATA @ comp_thresh_w[7:0]:
+  val[0] &= (uint8_t)~0xFFU;
+  val[0] |= (uint8_t)(((uint8_t)r->data) & 0xFFU);
+}
+
+/** @brief Convert packed {endian} binary value to struct. */
+static inline struct fh101rf_comp_thresh_w fh101rf_comp_thresh_w_unpack_le(const uint8_t val[1]) {
+  struct fh101rf_comp_thresh_w r = {0};
+  // DATA @ comp_thresh_w[7:0]:
+  r.data = (uint8_t)((val[0] & 0xFFU));
+  return r;
+}
+
+/** @brief Convert packed {endian} binary value to struct. */
+static inline struct fh101rf_comp_thresh_w fh101rf_comp_thresh_w_unpack_be(const uint8_t val[1]) {
+  struct fh101rf_comp_thresh_w r = {0};
+  // DATA @ comp_thresh_w[7:0]:
+  r.data = (uint8_t)((val[0] & 0xFFU));
+  return r;
+}
+
+/**
+ * @brief Validate struct
+ * @returns 0 if valid.
+ * @returns the position of the first invalid field if invalid.
+ * Confirms that all enums are valid, and all values fit into respective fields
+ */
+static inline int fh101rf_validate_comp_thresh_w(const struct fh101rf_comp_thresh_w *r) {
+  if ((r->data & ~(uint8_t)0xFF) != 0) return 1;
+  return 0;
+}
+
+/**
+ * @brief Attempt to convert packed {endian} binary value to struct.
+ * @returns 0 if valid.
+ * @returns the position of the first invalid field if invalid.
+ */
+static inline int fh101rf_comp_thresh_w_try_unpack_le(const uint8_t val[1], struct fh101rf_comp_thresh_w *r) {
+  *r = fh101rf_comp_thresh_w_unpack_le(val);
+  return fh101rf_validate_comp_thresh_w(r);
+}
+
+/**
+ * @brief Attempt to convert packed {endian} binary value to struct.
+ * @returns 0 if valid.
+ * @returns the position of the first invalid field if invalid.
+ */
+static inline int fh101rf_comp_thresh_w_try_unpack_be(const uint8_t val[1], struct fh101rf_comp_thresh_w *r) {
+  *r = fh101rf_comp_thresh_w_unpack_be(val);
+  return fh101rf_validate_comp_thresh_w(r);
+}
+
+// =============================================================================
 // ==== CYCLPRESC Register =====================================================
 // =============================================================================
 // Cycle prescaler for cyclic counter, system clock divided by prescaler (therefore max 8:29.9922 minutes).
@@ -10559,6 +10649,7 @@ static inline int fh101rf_xtal_osc_ctrl_try_unpack_be(const uint8_t val[1], stru
     struct fh101rf_cntr40_4* : fh101rf_cntr40_4_pack_le,                                           \
     struct fh101rf_cntr40_clr* : fh101rf_cntr40_clr_pack_le,                                       \
     struct fh101rf_code_select* : fh101rf_code_select_pack_le,                                     \
+    struct fh101rf_comp_thresh_w* : fh101rf_comp_thresh_w_pack_le,                                 \
     struct fh101rf_cyclpresc* : fh101rf_cyclpresc_pack_le,                                         \
     struct fh101rf_cycltop_hi* : fh101rf_cycltop_hi_pack_le,                                       \
     struct fh101rf_cycltop_lo* : fh101rf_cycltop_lo_pack_le,                                       \
@@ -10673,6 +10764,7 @@ static inline int fh101rf_xtal_osc_ctrl_try_unpack_be(const uint8_t val[1], stru
     struct fh101rf_cntr40_4* : fh101rf_cntr40_4_pack_be,                                           \
     struct fh101rf_cntr40_clr* : fh101rf_cntr40_clr_pack_be,                                       \
     struct fh101rf_code_select* : fh101rf_code_select_pack_be,                                     \
+    struct fh101rf_comp_thresh_w* : fh101rf_comp_thresh_w_pack_be,                                 \
     struct fh101rf_cyclpresc* : fh101rf_cyclpresc_pack_be,                                         \
     struct fh101rf_cycltop_hi* : fh101rf_cycltop_hi_pack_be,                                       \
     struct fh101rf_cycltop_lo* : fh101rf_cycltop_lo_pack_be,                                       \
@@ -10789,6 +10881,7 @@ static inline int fh101rf_xtal_osc_ctrl_try_unpack_be(const uint8_t val[1], stru
     struct fh101rf_cntr40_4* : fh101rf_cntr40_4_validate,                                          \
     struct fh101rf_cntr40_clr* : fh101rf_cntr40_clr_validate,                                      \
     struct fh101rf_code_select* : fh101rf_code_select_validate,                                    \
+    struct fh101rf_comp_thresh_w* : fh101rf_comp_thresh_w_validate,                                \
     struct fh101rf_cyclpresc* : fh101rf_cyclpresc_validate,                                        \
     struct fh101rf_cycltop_hi* : fh101rf_cycltop_hi_validate,                                      \
     struct fh101rf_cycltop_lo* : fh101rf_cycltop_lo_validate,                                      \
@@ -10904,6 +10997,7 @@ static inline int fh101rf_xtal_osc_ctrl_try_unpack_be(const uint8_t val[1], stru
     struct fh101rf_cntr40_4* : fh101rf_cntr40_4_try_unpack_le,                                     \
     struct fh101rf_cntr40_clr* : fh101rf_cntr40_clr_try_unpack_le,                                 \
     struct fh101rf_code_select* : fh101rf_code_select_try_unpack_le,                               \
+    struct fh101rf_comp_thresh_w* : fh101rf_comp_thresh_w_try_unpack_le,                           \
     struct fh101rf_cyclpresc* : fh101rf_cyclpresc_try_unpack_le,                                   \
     struct fh101rf_cycltop_hi* : fh101rf_cycltop_hi_try_unpack_le,                                 \
     struct fh101rf_cycltop_lo* : fh101rf_cycltop_lo_try_unpack_le,                                 \
@@ -11019,6 +11113,7 @@ static inline int fh101rf_xtal_osc_ctrl_try_unpack_be(const uint8_t val[1], stru
     struct fh101rf_cntr40_4* : fh101rf_cntr40_4_try_unpack_be,                                     \
     struct fh101rf_cntr40_clr* : fh101rf_cntr40_clr_try_unpack_be,                                 \
     struct fh101rf_code_select* : fh101rf_code_select_try_unpack_be,                               \
+    struct fh101rf_comp_thresh_w* : fh101rf_comp_thresh_w_try_unpack_be,                           \
     struct fh101rf_cyclpresc* : fh101rf_cyclpresc_try_unpack_be,                                   \
     struct fh101rf_cycltop_hi* : fh101rf_cycltop_hi_try_unpack_be,                                 \
     struct fh101rf_cycltop_lo* : fh101rf_cycltop_lo_try_unpack_be,                                 \
