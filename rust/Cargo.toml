@@ -1,0 +1,20 @@
+[package]
+name = "fh101rf"
+version = "0.0.1"
+authors = ["Silvano Cortesi <silvano.cortesi@hotmail.com>, Jonah Imfeld"]
+description = "Driver crate for the FH101RF Wake-Up Radio"
+categories = ["embedded", "no-std"]
+edition = "2021"
+license = "LGPL-3.0"
+
+[dependencies]
+embedded-hal = "1.0.0"
+embedded-hal-async = "1.0.0"
+heapless = "0.8.0"
+maybe-async = "0.2.10"
+defmt = { version = "0.3", optional = true }
+
+[features]
+default = ["async"]
+async = []
+defmt = ["dep:defmt"]

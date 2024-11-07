@@ -6,6 +6,11 @@ Generated from listing file: ./fh101rf.yaml.
 
 Listing file author: Jonah Imfeld, Silvano Cortesi.
 
+Listing file notice:
+```
+  Licensed under LGPL-3.0
+```
+
 | **Address** | **Register**        | **Reset Value** | **Brief**                                                                                                                                                                                      |
 | ----------- | ------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 0x00        | NFA433_SLOW         | 0x05            | Set the sample-rate for preamble-listening (LDR-mode with FDD/IDM enabled) or single-sequence wake-up (FDD disabled) in the 433-MHz band.                                                      |
@@ -109,6 +114,7 @@ Listing file author: Jonah Imfeld, Silvano Cortesi.
 | 0x75        | MUX_D_OUT_SEL       | 0x0F            | Selects the signal routed to the GPO1 and GPO2 pins.                                                                                                                                           |
 | 0x76        | LC_TG_ENA           | 0x01            | Set to 0x00 during power-up.                                                                                                                                                                   |
 | 0x77        | XTAL_GOOD           | 0x00            | Reads as true if the clock source is stable.                                                                                                                                                   |
+| 0x78        | COMP_THRESH_W       | 0x00            | Set this register to 0xA before executing the comparator calibration.                                                                                                                          |
 | 0x7C        | KORREL_SV_CLEAR     | 0x00            | Set true to clear the KORREL_STATE and KORREL_VAL registers.                                                                                                                                   |
 | 0x7F        | VERSION             | 0x41            | Holds the version number of the IC, currently 0x41.                                                                                                                                            |
 
@@ -2991,16 +2997,16 @@ Listing file author: Jonah Imfeld, Silvano Cortesi.
 
 #### Register:
 
-| **Bits:**   | 7:2 | 1    | 0 |
-| ----------- | --- | ---- | - |
-| **Field:**  | /   | DATA | / |
-| **Access:** | /   | W    | / |
+| **Bits:**   | 7:1 | 0    |
+| ----------- | --- | ---- |
+| **Field:**  | /   | DATA |
+| **Access:** | /   | W    |
 
   - Enables the built-in crystal oscillator driving a 2-pin crystal device.
 
 #### Fields:
 
-  - DATA [1]
+  - DATA [0]
    - [W]
    - Type: bool
 
@@ -3122,6 +3128,28 @@ Listing file author: Jonah Imfeld, Silvano Cortesi.
   - DATA [0]
    - [R]
    - Type: bool
+
+### COMP_THRESH_W
+
+#### Info:
+
+  - Address: 0x78
+  - Reset: 0x00
+
+#### Register:
+
+| **Bits:**   | 7:0  |
+| ----------- | ---- |
+| **Field:**  | DATA |
+| **Access:** | W    |
+
+  - Set this register to 0xA before executing the comparator calibration.
+
+#### Fields:
+
+  - DATA [7:0]
+   - [W]
+   - Type: uint
 
 ### KORREL_SV_CLEAR
 

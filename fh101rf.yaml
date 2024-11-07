@@ -1,6 +1,8 @@
 ---
 name: FH101RF
 author: "Jonah Imfeld, Silvano Cortesi"
+notice: |
+  Licensed under LGPL-3.0
 defaults:
   layout_bitwidth: 8
 
@@ -1319,7 +1321,7 @@ registers:
     doc: Enables the built-in crystal oscillator driving a 2-pin crystal device.
     layout: !Layout
       DATA:
-        bits: [1]
+        bits: [0]
         access: [W]
         accepts: !Bool
 
@@ -1407,6 +1409,16 @@ registers:
         bits: [0]
         access: [R]
         accepts: !Bool
+
+  COMP_THRESH_W: !Register
+    adr: 0x78
+    reset_val: 0x00
+    doc: Set this register to 0xA before executing the comparator calibration.
+    layout: !Layout
+      DATA:
+        bits: [0-7]
+        access: [W]
+        accepts: !UInt
 
   KORREL_SV_CLEAR: !Register
     adr: 0x7C
