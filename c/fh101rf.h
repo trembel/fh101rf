@@ -153,23 +153,31 @@ struct fh101rf_h {
    * @brief Pointer to the device-specific spi-read function
    * @warning Required!
    *
-   * @param buf Pointer to 8-bit array storing result.
-   * @param length Size of buf in bytes
+   * @param reg_adr The register address to read.
+   * @param res Pointer to a result variable
    * @return @ref E_FH101RF_SUCCESS if read was successful, otherwise @ref
    * E_FH101RF_COM_ERR.
    */
-  fh101rf_err_t (*spi_read)(uint8_t *buf, size_t length);
+  fh101rf_err_t (*spi_read_reg)(uint8_t reg_adr, uint8_t *res);
 
   /**
    * @brief Pointer to the device-specific spi-write function
    * @warning Required!
    *
-   * @param buf Pointer to 8-bit array storing values.
-   * @param length Size of buf in bytes
+   * @param reg_adr The register address to write.
+   * @param val Value to write
    * @return @ref E_FH101RF_SUCCESS if write was successful, otherwise @ref
    * E_FH101RF_COM_ERR.
    */
-  fh101rf_err_t (*spi_write)(uint8_t *buf, size_t length);
+  fh101rf_err_t (*spi_write_reg)(uint8_t reg_adr, uint8_t val);
+
+  /**
+   * @brief Function to set a specific IO level on the reset line
+   * @warning Required!
+   *
+   * @param level Bool to indicate level
+   */
+  void (*rst_set)(bool level);
 
   // === Interface function pointers. Optional. ===
 
@@ -213,7 +221,8 @@ struct fh101rf_h {
  * @return @ref E_FH101RF_SUCCESS if successful, otherwise an error code from
  * @ref fh101rf_err_t.
  */
-fh101rf_err_t fh101rf_init_struct_with_reset_val(struct fh101rf_reg_config *conf);
+fh101rf_err_t
+fh101rf_init_struct_with_reset_val(struct fh101rf_reg_config *conf);
 
 /**
  * @brief Initialize the device.
@@ -230,6 +239,17 @@ fh101rf_err_t fh101rf_init_struct_with_reset_val(struct fh101rf_reg_config *conf
  * @ref fh101rf_err_t.
  */
 fh101rf_err_t fh101rf_init(struct fh101rf_h *h);
+
+/**
+ * @brief Clear IRQ Status.
+ * This function clears the interrupt status
+ *
+ * @param h Pointer to the device-specific handle struct.
+ * @return @ref E_FH101RF_SUCCESS if successful, otherwise an error code
+ * from
+ * @ref fh101rf_err_t.
+ */
+fh101rf_err_t fh101rf_irq_clear(struct fh101rf_h *h);
 
 /**
  * @brief Function to write to a specific register of a device
@@ -269,8 +289,8 @@ fh101rf_err_t fh101rf_read_reg(const struct fh101rf_h *h, uint8_t reg_adr,
 fh101rf_err_t fh101rf_calibrate(struct fh101rf_h *h);
 
 /**
- * @brief Initialize the given register configuration with the reset values (from
- * little endian).
+ * @brief Initialize the given register configuration with the reset values
+ * (from little endian).
  *
  * @param conf pointer to a register configuration
  * @return @ref E_FH101RF_SUCCESS if successful, otherwise an error code from

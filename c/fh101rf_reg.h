@@ -10540,7 +10540,7 @@ static inline int fh101rf_xtal_good_try_unpack_be(const uint8_t val[1], struct f
 // =============================================================================
 // Enables the built-in crystal oscillator driving a 2-pin crystal device.
 // Fields:
-//  - [1] DATA (bool)
+//  - [0] DATA (bool)
 
 #define FH101RF_XTAL_OSC_CTRL_ADDRESS  (0x73U) //!< XTAL_OSC_CTRL register address
 #define FH101RF_XTAL_OSC_CTRL_RESET_LE {0x1U}  //!< XTAL_OSC_CTRL register reset value
@@ -10563,9 +10563,9 @@ struct fh101rf_xtal_osc_ctrl {
  * @note use pack/unpack functions for conversion to/from packed binary value
  */
 static inline void fh101rf_xtal_osc_ctrl_pack_le(const struct fh101rf_xtal_osc_ctrl *r, uint8_t val[1]) {
-  // DATA @ xtal_osc_ctrl[1]:
-  val[0] &= (uint8_t)~0x2U;
-  val[0] |= (uint8_t)(((uint8_t)(r->data << 1)) & 0x2U);
+  // DATA @ xtal_osc_ctrl[0]:
+  val[0] &= (uint8_t)~0x1U;
+  val[0] |= (uint8_t)(((uint8_t)r->data) & 0x1U);
 }
 
 /**
@@ -10573,24 +10573,24 @@ static inline void fh101rf_xtal_osc_ctrl_pack_le(const struct fh101rf_xtal_osc_c
  * @note use pack/unpack functions for conversion to/from packed binary value
  */
 static inline void fh101rf_xtal_osc_ctrl_pack_be(const struct fh101rf_xtal_osc_ctrl *r, uint8_t val[1]) {
-  // DATA @ xtal_osc_ctrl[1]:
-  val[0] &= (uint8_t)~0x2U;
-  val[0] |= (uint8_t)(((uint8_t)(r->data << 1)) & 0x2U);
+  // DATA @ xtal_osc_ctrl[0]:
+  val[0] &= (uint8_t)~0x1U;
+  val[0] |= (uint8_t)(((uint8_t)r->data) & 0x1U);
 }
 
 /** @brief Convert packed {endian} binary value to struct. */
 static inline struct fh101rf_xtal_osc_ctrl fh101rf_xtal_osc_ctrl_unpack_le(const uint8_t val[1]) {
   struct fh101rf_xtal_osc_ctrl r = {0};
-  // DATA @ xtal_osc_ctrl[1]:
-  r.data = (bool)(((val[0] & 0x2U) >> 1));
+  // DATA @ xtal_osc_ctrl[0]:
+  r.data = (bool)((val[0] & 0x1U));
   return r;
 }
 
 /** @brief Convert packed {endian} binary value to struct. */
 static inline struct fh101rf_xtal_osc_ctrl fh101rf_xtal_osc_ctrl_unpack_be(const uint8_t val[1]) {
   struct fh101rf_xtal_osc_ctrl r = {0};
-  // DATA @ xtal_osc_ctrl[1]:
-  r.data = (bool)(((val[0] & 0x2U) >> 1));
+  // DATA @ xtal_osc_ctrl[0]:
+  r.data = (bool)((val[0] & 0x1U));
   return r;
 }
 

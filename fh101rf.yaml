@@ -1319,7 +1319,7 @@ registers:
     doc: Enables the built-in crystal oscillator driving a 2-pin crystal device.
     layout: !Layout
       DATA:
-        bits: [1]
+        bits: [0]
         access: [W]
         accepts: !Bool
 

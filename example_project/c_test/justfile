@@ -1,0 +1,37 @@
+EXE_FLASH := "probe-rs"
+EXE_RM := "rm -r"
+
+BUILD_DIR := "build"
+
+TARGET := "c_test.elf"
+TARGET_MCU := "STM32U545RETxQ"
+
+build: configure
+	@echo Building...
+	cd {{BUILD_DIR}}/debug && make
+
+build_release: configure_release
+	@echo Building release...
+	cd {{BUILD_DIR}}/release && make
+
+configure:
+	mkdir -p {{BUILD_DIR}}/debug
+	cd {{BUILD_DIR}}/debug && cmake -DCMAKE_BUILD_TYPE=Debug ../../
+
+configure_release:
+	mkdir -p {{BUILD_DIR}}/release
+	cd {{BUILD_DIR}}/release && cmake -DCMAKE_BUILD_TYPE=Release ../../
+
+clean:
+	{{EXE_RM}} {{BUILD_DIR}}
+
+flash: build
+	{{EXE_FLASH}} run --chip {{TARGET_MCU}} {{BUILD_DIR}}/debug/{{TARGET}}
+
+flash_release: build_release
+	{{EXE_FLASH}} run --chip {{TARGET_MCU}} {{BUILD_DIR}}/release/{{TARGET}}
+
+bear: configure
+	@echo Generating compile_commands...
+	cd {{BUILD_DIR}}/debug && bear -- make
+	@mv {{BUILD_DIR}}/debug/compile_commands.json ./
