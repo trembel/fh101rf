@@ -6,7 +6,7 @@
 //! ## Infos
 //!
 //! Generated using reginald from `../../fh101rf.yaml`.
-//! 
+//!
 //! Listing file author: Jonah Imfeld, Silvano Cortesi
 //!
 //! Listing file notice:
@@ -553,9 +553,7 @@ impl Register<1, u8> for NSpgTarget {
 /// Reset Value
 impl Default for NSpgTarget {
     fn default() -> Self {
-        Self {
-            data: 0x31,
-        }
+        Self { data: 0x31 }
     }
 }
 
@@ -583,9 +581,7 @@ impl Register<1, u8> for NLcoTarget433Hi {
 /// Reset Value
 impl Default for NLcoTarget433Hi {
     fn default() -> Self {
-        Self {
-            data: 0xE,
-        }
+        Self { data: 0xE }
     }
 }
 
@@ -613,9 +609,7 @@ impl Register<1, u8> for NLcoTarget433Lo {
 /// Reset Value
 impl Default for NLcoTarget433Lo {
     fn default() -> Self {
-        Self {
-            data: 0x20,
-        }
+        Self { data: 0x20 }
     }
 }
 
@@ -643,9 +637,7 @@ impl Register<1, u8> for NLcoTarget868Hi {
 /// Reset Value
 impl Default for NLcoTarget868Hi {
     fn default() -> Self {
-        Self {
-            data: 0xD,
-        }
+        Self { data: 0xD }
     }
 }
 
@@ -673,9 +665,7 @@ impl Register<1, u8> for NLcoTarget868Lo {
 /// Reset Value
 impl Default for NLcoTarget868Lo {
     fn default() -> Self {
-        Self {
-            data: 0x87,
-        }
+        Self { data: 0x87 }
     }
 }
 
@@ -703,9 +693,7 @@ impl Register<1, u8> for NLcoTarget2g4Hi {
 /// Reset Value
 impl Default for NLcoTarget2g4Hi {
     fn default() -> Self {
-        Self {
-            data: 0x12,
-        }
+        Self { data: 0x12 }
     }
 }
 
@@ -733,9 +721,7 @@ impl Register<1, u8> for NLcoTarget2g4Lo {
 /// Reset Value
 impl Default for NLcoTarget2g4Lo {
     fn default() -> Self {
-        Self {
-            data: 0xCE,
-        }
+        Self { data: 0xCE }
     }
 }
 
@@ -763,9 +749,7 @@ impl Register<1, u8> for LcoFreq433Hi {
 /// Reset Value
 impl Default for LcoFreq433Hi {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -793,9 +777,7 @@ impl Register<1, u8> for LcoFreq433Lo {
 /// Reset Value
 impl Default for LcoFreq433Lo {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -823,9 +805,7 @@ impl Register<1, u8> for LcoFreq868Hi {
 /// Reset Value
 impl Default for LcoFreq868Hi {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -853,9 +833,7 @@ impl Register<1, u8> for LcoFreq868Lo {
 /// Reset Value
 impl Default for LcoFreq868Lo {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -883,9 +861,7 @@ impl Register<1, u8> for LcoFreq2g4Hi {
 /// Reset Value
 impl Default for LcoFreq2g4Hi {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -913,9 +889,7 @@ impl Register<1, u8> for LcoFreq2g4Lo {
 /// Reset Value
 impl Default for LcoFreq2g4Lo {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -943,9 +917,7 @@ impl Register<1, u8> for DCornerCtrl {
 /// Reset Value
 impl Default for DCornerCtrl {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -1055,9 +1027,7 @@ impl Register<1, u8> for KorrelThreshA {
 /// Reset Value
 impl Default for KorrelThreshA {
     fn default() -> Self {
-        Self {
-            data: 0x1A,
-        }
+        Self { data: 0x1A }
     }
 }
 
@@ -1085,9 +1055,7 @@ impl Register<1, u8> for KorrelThreshB {
 /// Reset Value
 impl Default for KorrelThreshB {
     fn default() -> Self {
-        Self {
-            data: 0x1A,
-        }
+        Self { data: 0x1A }
     }
 }
 
@@ -1162,10 +1130,7 @@ impl Register<1, u8> for KorrelVal {
 /// Reset Value
 impl Default for KorrelVal {
     fn default() -> Self {
-        Self {
-            a: 0x0,
-            b: 0x0,
-        }
+        Self { a: 0x0, b: 0x0 }
     }
 }
 
@@ -1489,9 +1454,7 @@ impl Register<1, u8> for IdHi {
 /// Reset Value
 impl Default for IdHi {
     fn default() -> Self {
-        Self {
-            data: 0x7D,
-        }
+        Self { data: 0x7D }
     }
 }
 
@@ -1519,9 +1482,7 @@ impl Register<1, u8> for IdLo {
 /// Reset Value
 impl Default for IdLo {
     fn default() -> Self {
-        Self {
-            data: 0xA8,
-        }
+        Self { data: 0xA8 }
     }
 }
 
@@ -1596,9 +1557,7 @@ impl Register<1, u8> for IdmCtrl {
 /// Reset Value
 impl Default for IdmCtrl {
     fn default() -> Self {
-        Self {
-            ctrl: Ctrl::IndOnly,
-        }
+        Self { ctrl: Ctrl::IndOnly }
     }
 }
 
@@ -1626,9 +1585,7 @@ impl Register<1, u8> for IdmClr {
 /// Reset Value
 impl Default for IdmClr {
     fn default() -> Self {
-        Self {
-            branch: false,
-        }
+        Self { branch: false }
     }
 }
 
@@ -1838,9 +1795,7 @@ impl Register<1, u8> for Rtcsh0ThreshHi {
 /// Reset Value
 impl Default for Rtcsh0ThreshHi {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -1868,9 +1823,7 @@ impl Register<1, u8> for Rtcsh0ThreshLo {
 /// Reset Value
 impl Default for Rtcsh0ThreshLo {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -1898,9 +1851,7 @@ impl Register<1, u8> for Rtcsh1ThreshHi {
 /// Reset Value
 impl Default for Rtcsh1ThreshHi {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -1928,9 +1879,7 @@ impl Register<1, u8> for Rtcsh1ThreshLo {
 /// Reset Value
 impl Default for Rtcsh1ThreshLo {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -1958,9 +1907,7 @@ impl Register<1, u8> for Rtclg0Thresh4 {
 /// Reset Value
 impl Default for Rtclg0Thresh4 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -1988,9 +1935,7 @@ impl Register<1, u8> for Rtclg0Thresh3 {
 /// Reset Value
 impl Default for Rtclg0Thresh3 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2018,9 +1963,7 @@ impl Register<1, u8> for Rtclg0Thresh2 {
 /// Reset Value
 impl Default for Rtclg0Thresh2 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2048,9 +1991,7 @@ impl Register<1, u8> for Rtclg0Thresh1 {
 /// Reset Value
 impl Default for Rtclg0Thresh1 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2078,9 +2019,7 @@ impl Register<1, u8> for Rtclg0Thresh0 {
 /// Reset Value
 impl Default for Rtclg0Thresh0 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2108,9 +2047,7 @@ impl Register<1, u8> for Rtclg1Thresh4 {
 /// Reset Value
 impl Default for Rtclg1Thresh4 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2138,9 +2075,7 @@ impl Register<1, u8> for Rtclg1Thresh3 {
 /// Reset Value
 impl Default for Rtclg1Thresh3 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2168,9 +2103,7 @@ impl Register<1, u8> for Rtclg1Thresh2 {
 /// Reset Value
 impl Default for Rtclg1Thresh2 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2198,9 +2131,7 @@ impl Register<1, u8> for Rtclg1Thresh1 {
 /// Reset Value
 impl Default for Rtclg1Thresh1 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2228,9 +2159,7 @@ impl Register<1, u8> for Rtclg1Thresh0 {
 /// Reset Value
 impl Default for Rtclg1Thresh0 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2258,9 +2187,7 @@ impl Register<1, u8> for Cyclpresc {
 /// Reset Value
 impl Default for Cyclpresc {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2288,9 +2215,7 @@ impl Register<1, u8> for CycltopHi {
 /// Reset Value
 impl Default for CycltopHi {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2318,9 +2243,7 @@ impl Register<1, u8> for CycltopLo {
 /// Reset Value
 impl Default for CycltopLo {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2348,9 +2271,7 @@ impl Register<1, u8> for Cntr404 {
 /// Reset Value
 impl Default for Cntr404 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2378,9 +2299,7 @@ impl Register<1, u8> for Cntr403 {
 /// Reset Value
 impl Default for Cntr403 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2408,9 +2327,7 @@ impl Register<1, u8> for Cntr402 {
 /// Reset Value
 impl Default for Cntr402 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2438,9 +2355,7 @@ impl Register<1, u8> for Cntr401 {
 /// Reset Value
 impl Default for Cntr401 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2468,9 +2383,7 @@ impl Register<1, u8> for Cntr400 {
 /// Reset Value
 impl Default for Cntr400 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2498,9 +2411,7 @@ impl Register<1, u8> for Cntr40Clr {
 /// Reset Value
 impl Default for Cntr40Clr {
     fn default() -> Self {
-        Self {
-            clr: false,
-        }
+        Self { clr: false }
     }
 }
 
@@ -2564,9 +2475,7 @@ impl Register<1, u8> for FifoCount433 {
 /// Reset Value
 impl Default for FifoCount433 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2594,9 +2503,7 @@ impl Register<1, u8> for FifoCount868 {
 /// Reset Value
 impl Default for FifoCount868 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2624,9 +2531,7 @@ impl Register<1, u8> for FifoCount2g4 {
 /// Reset Value
 impl Default for FifoCount2g4 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2654,9 +2559,7 @@ impl Register<1, u8> for RxFifo5433 {
 /// Reset Value
 impl Default for RxFifo5433 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2684,9 +2587,7 @@ impl Register<1, u8> for RxFifo4433 {
 /// Reset Value
 impl Default for RxFifo4433 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2714,9 +2615,7 @@ impl Register<1, u8> for RxFifo3433 {
 /// Reset Value
 impl Default for RxFifo3433 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2744,9 +2643,7 @@ impl Register<1, u8> for RxFifo2433 {
 /// Reset Value
 impl Default for RxFifo2433 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2774,9 +2671,7 @@ impl Register<1, u8> for RxFifo1433 {
 /// Reset Value
 impl Default for RxFifo1433 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2804,9 +2699,7 @@ impl Register<1, u8> for RxFifo0433 {
 /// Reset Value
 impl Default for RxFifo0433 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2834,9 +2727,7 @@ impl Register<1, u8> for RxFifo5868 {
 /// Reset Value
 impl Default for RxFifo5868 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2864,9 +2755,7 @@ impl Register<1, u8> for RxFifo4868 {
 /// Reset Value
 impl Default for RxFifo4868 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2894,9 +2783,7 @@ impl Register<1, u8> for RxFifo3868 {
 /// Reset Value
 impl Default for RxFifo3868 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2924,9 +2811,7 @@ impl Register<1, u8> for RxFifo2868 {
 /// Reset Value
 impl Default for RxFifo2868 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2954,9 +2839,7 @@ impl Register<1, u8> for RxFifo1868 {
 /// Reset Value
 impl Default for RxFifo1868 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -2984,9 +2867,7 @@ impl Register<1, u8> for RxFifo0868 {
 /// Reset Value
 impl Default for RxFifo0868 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -3014,9 +2895,7 @@ impl Register<1, u8> for RxFifo52g4 {
 /// Reset Value
 impl Default for RxFifo52g4 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -3044,9 +2923,7 @@ impl Register<1, u8> for RxFifo42g4 {
 /// Reset Value
 impl Default for RxFifo42g4 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -3074,9 +2951,7 @@ impl Register<1, u8> for RxFifo32g4 {
 /// Reset Value
 impl Default for RxFifo32g4 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -3104,9 +2979,7 @@ impl Register<1, u8> for RxFifo22g4 {
 /// Reset Value
 impl Default for RxFifo22g4 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -3134,9 +3007,7 @@ impl Register<1, u8> for RxFifo12g4 {
 /// Reset Value
 impl Default for RxFifo12g4 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -3164,9 +3035,7 @@ impl Register<1, u8> for RxFifo02g4 {
 /// Reset Value
 impl Default for RxFifo02g4 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -3327,9 +3196,7 @@ impl Register<1, u8> for Genpurp1 {
 /// Reset Value
 impl Default for Genpurp1 {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -3357,9 +3224,7 @@ impl Register<1, u8> for XtalOscCtrl {
 /// Reset Value
 impl Default for XtalOscCtrl {
     fn default() -> Self {
-        Self {
-            data: true,
-        }
+        Self { data: true }
     }
 }
 
@@ -3454,9 +3319,7 @@ impl Register<1, u8> for MuxDOutSel {
 /// Reset Value
 impl Default for MuxDOutSel {
     fn default() -> Self {
-        Self {
-            out: Out::IrqEvent1,
-        }
+        Self { out: Out::IrqEvent1 }
     }
 }
 
@@ -3484,9 +3347,7 @@ impl Register<1, u8> for LcTgEna {
 /// Reset Value
 impl Default for LcTgEna {
     fn default() -> Self {
-        Self {
-            data: true,
-        }
+        Self { data: true }
     }
 }
 
@@ -3514,9 +3375,7 @@ impl Register<1, u8> for XtalGood {
 /// Reset Value
 impl Default for XtalGood {
     fn default() -> Self {
-        Self {
-            data: false,
-        }
+        Self { data: false }
     }
 }
 
@@ -3544,9 +3403,7 @@ impl Register<1, u8> for CompThreshW {
 /// Reset Value
 impl Default for CompThreshW {
     fn default() -> Self {
-        Self {
-            data: 0x0,
-        }
+        Self { data: 0x0 }
     }
 }
 
@@ -3574,9 +3431,7 @@ impl Register<1, u8> for KorrelSvClear {
 /// Reset Value
 impl Default for KorrelSvClear {
     fn default() -> Self {
-        Self {
-            data: false,
-        }
+        Self { data: false }
     }
 }
 
@@ -3593,8 +3448,7 @@ impl Default for KorrelSvClear {
 /// Fixed bits:
 /// - `[7:0]` = 0b1000001
 #[derive(Debug, PartialEq)]
-pub struct Version {
-}
+pub struct Version {}
 
 /// Register Properties
 impl Register<1, u8> for Version {
@@ -3605,8 +3459,7 @@ impl Register<1, u8> for Version {
 /// Reset Value
 impl Default for Version {
     fn default() -> Self {
-        Self {
-        }
+        Self {}
     }
 }
 
@@ -3834,7 +3687,7 @@ impl TryFromBytes<1> for BinCode {
         if bytes_outside == [0; 1] {
             Ok(Self::from_masked_le_bytes(val))
         } else {
-            Err(Self::Error {pos: 0})
+            Err(Self::Error { pos: 0 })
         }
     }
 }
@@ -3884,7 +3737,7 @@ impl TryFromBytes<1> for Ctrl {
         if bytes_outside == [0; 1] {
             Ok(Self::from_masked_le_bytes(val))
         } else {
-            Err(Self::Error {pos: 0})
+            Err(Self::Error { pos: 0 })
         }
     }
 }
@@ -3907,10 +3760,10 @@ impl TryFromBytes<1> for Data {
 
     fn try_from_le_bytes(val: &[u8; 1]) -> Result<Self, Self::Error> {
         match val {
-           [0x2] => Ok(Self::Band2g4),
-           [0x0] => Ok(Self::Band433),
-           [0x1] => Ok(Self::Band868),
-            _ => Err(Self::Error {pos: 0})
+            [0x2] => Ok(Self::Band2g4),
+            [0x0] => Ok(Self::Band433),
+            [0x1] => Ok(Self::Band868),
+            _ => Err(Self::Error { pos: 0 }),
         }
     }
 }
@@ -3947,7 +3800,7 @@ impl TryFromBytes<1> for ExitCond {
         if bytes_outside == [0; 1] {
             Ok(Self::from_masked_le_bytes(val))
         } else {
-            Err(Self::Error {pos: 0})
+            Err(Self::Error { pos: 0 })
         }
     }
 }
@@ -3983,7 +3836,7 @@ impl TryFromBytes<1> for FddMode {
         if bytes_outside == [0; 1] {
             Ok(Self::from_masked_le_bytes(val))
         } else {
-            Err(Self::Error {pos: 0})
+            Err(Self::Error { pos: 0 })
         }
     }
 }
@@ -4019,7 +3872,7 @@ impl TryFromBytes<1> for FifoLen {
         if bytes_outside == [0; 1] {
             Ok(Self::from_masked_le_bytes(val))
         } else {
-            Err(Self::Error {pos: 0})
+            Err(Self::Error { pos: 0 })
         }
     }
 }
@@ -4042,10 +3895,10 @@ impl TryFromBytes<1> for KorrelBranchesLatest {
 
     fn try_from_le_bytes(val: &[u8; 1]) -> Result<Self, Self::Error> {
         match val {
-           [0x2] => Ok(Self::Band2g4),
-           [0x0] => Ok(Self::Band433),
-           [0x1] => Ok(Self::Band868),
-            _ => Err(Self::Error {pos: 0})
+            [0x2] => Ok(Self::Band2g4),
+            [0x0] => Ok(Self::Band433),
+            [0x1] => Ok(Self::Band868),
+            _ => Err(Self::Error { pos: 0 }),
         }
     }
 }
@@ -4067,18 +3920,18 @@ impl TryFromBytes<1> for Out {
 
     fn try_from_le_bytes(val: &[u8; 1]) -> Result<Self, Self::Error> {
         match val {
-           [0xE] => Ok(Self::Clk32IrqEvent),
-           [0x6] => Ok(Self::IdmWupA433),
-           [0xF] => Ok(Self::IrqEvent1),
-           [0x0] => Ok(Self::Rx2g4),
-           [0x2] => Ok(Self::Rx433),
-           [0x1] => Ok(Self::Rx868),
-           [0xA] => Ok(Self::WupA2g4RxActive),
-           [0x8] => Ok(Self::WupA433RxActive),
-           [0x9] => Ok(Self::WupA868RxActive),
-           [0x3] => Ok(Self::WupAB2g4),
-           [0x7] => Ok(Self::WupAB868),
-            _ => Err(Self::Error {pos: 0})
+            [0xE] => Ok(Self::Clk32IrqEvent),
+            [0x6] => Ok(Self::IdmWupA433),
+            [0xF] => Ok(Self::IrqEvent1),
+            [0x0] => Ok(Self::Rx2g4),
+            [0x2] => Ok(Self::Rx433),
+            [0x1] => Ok(Self::Rx868),
+            [0xA] => Ok(Self::WupA2g4RxActive),
+            [0x8] => Ok(Self::WupA433RxActive),
+            [0x9] => Ok(Self::WupA868RxActive),
+            [0x3] => Ok(Self::WupAB2g4),
+            [0x7] => Ok(Self::WupAB868),
+            _ => Err(Self::Error { pos: 0 }),
         }
     }
 }
@@ -4123,7 +3976,7 @@ impl TryFromBytes<1> for Reason {
         if bytes_outside == [0; 1] {
             Ok(Self::from_masked_le_bytes(val))
         } else {
-            Err(Self::Error {pos: 0})
+            Err(Self::Error { pos: 0 })
         }
     }
 }
@@ -4165,7 +4018,7 @@ impl TryFromBytes<1> for SampleRate {
         if bytes_outside == [0; 1] {
             Ok(Self::from_masked_le_bytes(val))
         } else {
-            Err(Self::Error {pos: 0})
+            Err(Self::Error { pos: 0 })
         }
     }
 }
@@ -4204,8 +4057,8 @@ impl FromBytes<1> for ActualBandselect {
         let mut selected_bands: [u8; 1] = [0; 1];
         selected_bands[0] |= val[0] & 0x7;
         Self {
-          // SELECTED_BANDS @ ActualBandselect[2:0]:
-          selected_bands: Bands::from_le_bytes(&selected_bands),
+            // SELECTED_BANDS @ ActualBandselect[2:0]:
+            selected_bands: Bands::from_le_bytes(&selected_bands),
         }
     }
 }
@@ -4247,10 +4100,10 @@ impl FromBytes<1> for ActualNfa2g4 {
         let mut slow: [u8; 1] = [0; 1];
         slow[0] |= val[0] & 0x7;
         Self {
-          // FAST @ ActualNfa2g4[6:4]:
-          fast: SampleRate::from_masked_le_bytes(&fast),
-          // SLOW @ ActualNfa2g4[2:0]:
-          slow: SampleRate::from_masked_le_bytes(&slow),
+            // FAST @ ActualNfa2g4[6:4]:
+            fast: SampleRate::from_masked_le_bytes(&fast),
+            // SLOW @ ActualNfa2g4[2:0]:
+            slow: SampleRate::from_masked_le_bytes(&slow),
         }
     }
 }
@@ -4292,10 +4145,10 @@ impl FromBytes<1> for ActualNfa433 {
         let mut slow: [u8; 1] = [0; 1];
         slow[0] |= val[0] & 0x7;
         Self {
-          // FAST @ ActualNfa433[6:4]:
-          fast: SampleRate::from_masked_le_bytes(&fast),
-          // SLOW @ ActualNfa433[2:0]:
-          slow: SampleRate::from_masked_le_bytes(&slow),
+            // FAST @ ActualNfa433[6:4]:
+            fast: SampleRate::from_masked_le_bytes(&fast),
+            // SLOW @ ActualNfa433[2:0]:
+            slow: SampleRate::from_masked_le_bytes(&slow),
         }
     }
 }
@@ -4337,10 +4190,10 @@ impl FromBytes<1> for ActualNfa868 {
         let mut slow: [u8; 1] = [0; 1];
         slow[0] |= val[0] & 0x7;
         Self {
-          // FAST @ ActualNfa868[6:4]:
-          fast: SampleRate::from_masked_le_bytes(&fast),
-          // SLOW @ ActualNfa868[2:0]:
-          slow: SampleRate::from_masked_le_bytes(&slow),
+            // FAST @ ActualNfa868[6:4]:
+            fast: SampleRate::from_masked_le_bytes(&fast),
+            // SLOW @ ActualNfa868[2:0]:
+            slow: SampleRate::from_masked_le_bytes(&slow),
         }
     }
 }
@@ -4376,12 +4229,12 @@ impl ToBytes<1> for Bands {
 impl FromBytes<1> for Bands {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // BAND_2G4 @ Bands[2]:
-          band_2g4: (val[0] & 0x4) >> 2 != 0,
-          // BAND_433 @ Bands[0]:
-          band_433: val[0] & 0x1 != 0,
-          // BAND_868 @ Bands[1]:
-          band_868: (val[0] & 0x2) >> 1 != 0,
+            // BAND_2G4 @ Bands[2]:
+            band_2g4: (val[0] & 0x4) >> 2 != 0,
+            // BAND_433 @ Bands[0]:
+            band_433: val[0] & 0x1 != 0,
+            // BAND_868 @ Bands[1]:
+            band_868: (val[0] & 0x2) >> 1 != 0,
         }
     }
 }
@@ -4423,10 +4276,10 @@ impl FromBytes<1> for BandBranchCtrl {
         let mut active_branches: [u8; 1] = [0; 1];
         active_branches[0] |= val[0] & 0x7;
         Self {
-          // ACTIVE_BANDS @ BandBranchCtrl[6:4]:
-          active_bands: Bands::from_le_bytes(&active_bands),
-          // ACTIVE_BRANCHES @ BandBranchCtrl[2:0]:
-          active_branches: Branches::from_le_bytes(&active_branches),
+            // ACTIVE_BANDS @ BandBranchCtrl[6:4]:
+            active_bands: Bands::from_le_bytes(&active_bands),
+            // ACTIVE_BRANCHES @ BandBranchCtrl[2:0]:
+            active_branches: Branches::from_le_bytes(&active_branches),
         }
     }
 }
@@ -4462,12 +4315,12 @@ impl ToBytes<1> for Branches {
 impl FromBytes<1> for Branches {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // MEDIUM @ Branches[1]:
-          medium: (val[0] & 0x2) >> 1 != 0,
-          // STRONG @ Branches[2]:
-          strong: (val[0] & 0x4) >> 2 != 0,
-          // WEAK @ Branches[0]:
-          weak: val[0] & 0x1 != 0,
+            // MEDIUM @ Branches[1]:
+            medium: (val[0] & 0x2) >> 1 != 0,
+            // STRONG @ Branches[2]:
+            strong: (val[0] & 0x4) >> 2 != 0,
+            // WEAK @ Branches[0]:
+            weak: val[0] & 0x1 != 0,
         }
     }
 }
@@ -4505,14 +4358,14 @@ impl ToBytes<1> for CalibCtrl {
 impl FromBytes<1> for CalibCtrl {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // CAL_START @ CalibCtrl[0]:
-          cal_start: val[0] & 0x1 != 0,
-          // LCO_CAL @ CalibCtrl[1]:
-          lco_cal: (val[0] & 0x2) >> 1 != 0,
-          // OFFSET_CAL @ CalibCtrl[3]:
-          offset_cal: (val[0] & 0x8) >> 3 != 0,
-          // SPG_CAL @ CalibCtrl[2]:
-          spg_cal: (val[0] & 0x4) >> 2 != 0,
+            // CAL_START @ CalibCtrl[0]:
+            cal_start: val[0] & 0x1 != 0,
+            // LCO_CAL @ CalibCtrl[1]:
+            lco_cal: (val[0] & 0x2) >> 1 != 0,
+            // OFFSET_CAL @ CalibCtrl[3]:
+            offset_cal: (val[0] & 0x8) >> 3 != 0,
+            // SPG_CAL @ CalibCtrl[2]:
+            spg_cal: (val[0] & 0x4) >> 2 != 0,
         }
     }
 }
@@ -4550,14 +4403,14 @@ impl ToBytes<1> for CalibStatus {
 impl FromBytes<1> for CalibStatus {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // CAL_IN_PROG @ CalibStatus[0]:
-          cal_in_prog: val[0] & 0x1 != 0,
-          // LCO_CAL_IN_PROG @ CalibStatus[1]:
-          lco_cal_in_prog: (val[0] & 0x2) >> 1 != 0,
-          // OFFSET_CAL_IN_PROG @ CalibStatus[3]:
-          offset_cal_in_prog: (val[0] & 0x8) >> 3 != 0,
-          // SPG_CAL_IN_PROG @ CalibStatus[2]:
-          spg_cal_in_prog: (val[0] & 0x4) >> 2 != 0,
+            // CAL_IN_PROG @ CalibStatus[0]:
+            cal_in_prog: val[0] & 0x1 != 0,
+            // LCO_CAL_IN_PROG @ CalibStatus[1]:
+            lco_cal_in_prog: (val[0] & 0x2) >> 1 != 0,
+            // OFFSET_CAL_IN_PROG @ CalibStatus[3]:
+            offset_cal_in_prog: (val[0] & 0x8) >> 3 != 0,
+            // SPG_CAL_IN_PROG @ CalibStatus[2]:
+            spg_cal_in_prog: (val[0] & 0x4) >> 2 != 0,
         }
     }
 }
@@ -4589,8 +4442,8 @@ impl ToBytes<1> for Cntr400 {
 impl FromBytes<1> for Cntr400 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Cntr400[7:0]:
-          data: val[0],
+            // DATA @ Cntr400[7:0]:
+            data: val[0],
         }
     }
 }
@@ -4622,8 +4475,8 @@ impl ToBytes<1> for Cntr401 {
 impl FromBytes<1> for Cntr401 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Cntr401[7:0]:
-          data: val[0],
+            // DATA @ Cntr401[7:0]:
+            data: val[0],
         }
     }
 }
@@ -4655,8 +4508,8 @@ impl ToBytes<1> for Cntr402 {
 impl FromBytes<1> for Cntr402 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Cntr402[7:0]:
-          data: val[0],
+            // DATA @ Cntr402[7:0]:
+            data: val[0],
         }
     }
 }
@@ -4688,8 +4541,8 @@ impl ToBytes<1> for Cntr403 {
 impl FromBytes<1> for Cntr403 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Cntr403[7:0]:
-          data: val[0],
+            // DATA @ Cntr403[7:0]:
+            data: val[0],
         }
     }
 }
@@ -4721,8 +4574,8 @@ impl ToBytes<1> for Cntr404 {
 impl FromBytes<1> for Cntr404 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Cntr404[7:0]:
-          data: val[0],
+            // DATA @ Cntr404[7:0]:
+            data: val[0],
         }
     }
 }
@@ -4754,8 +4607,8 @@ impl ToBytes<1> for Cntr40Clr {
 impl FromBytes<1> for Cntr40Clr {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // CLR @ Cntr40Clr[0]:
-          clr: val[0] & 0x1 != 0,
+            // CLR @ Cntr40Clr[0]:
+            clr: val[0] & 0x1 != 0,
         }
     }
 }
@@ -4797,10 +4650,10 @@ impl FromBytes<1> for CodeSelect {
         let mut b: [u8; 1] = [0; 1];
         b[0] |= (val[0] & 0xF0) >> 4;
         Self {
-          // A @ CodeSelect[3:0]:
-          a: BinCode::from_masked_le_bytes(&a),
-          // B @ CodeSelect[7:4]:
-          b: BinCode::from_masked_le_bytes(&b),
+            // A @ CodeSelect[3:0]:
+            a: BinCode::from_masked_le_bytes(&a),
+            // B @ CodeSelect[7:4]:
+            b: BinCode::from_masked_le_bytes(&b),
         }
     }
 }
@@ -4832,8 +4685,8 @@ impl ToBytes<1> for CompThreshW {
 impl FromBytes<1> for CompThreshW {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ CompThreshW[7:0]:
-          data: val[0],
+            // DATA @ CompThreshW[7:0]:
+            data: val[0],
         }
     }
 }
@@ -4865,8 +4718,8 @@ impl ToBytes<1> for Cyclpresc {
 impl FromBytes<1> for Cyclpresc {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Cyclpresc[7:0]:
-          data: val[0],
+            // DATA @ Cyclpresc[7:0]:
+            data: val[0],
         }
     }
 }
@@ -4898,8 +4751,8 @@ impl ToBytes<1> for CycltopHi {
 impl FromBytes<1> for CycltopHi {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ CycltopHi[7:0]:
-          data: val[0],
+            // DATA @ CycltopHi[7:0]:
+            data: val[0],
         }
     }
 }
@@ -4931,8 +4784,8 @@ impl ToBytes<1> for CycltopLo {
 impl FromBytes<1> for CycltopLo {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ CycltopLo[7:0]:
-          data: val[0],
+            // DATA @ CycltopLo[7:0]:
+            data: val[0],
         }
     }
 }
@@ -4964,8 +4817,8 @@ impl ToBytes<1> for DCornerCtrl {
 impl FromBytes<1> for DCornerCtrl {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ DCornerCtrl[7:0]:
-          data: val[0],
+            // DATA @ DCornerCtrl[7:0]:
+            data: val[0],
         }
     }
 }
@@ -5013,12 +4866,12 @@ impl FromBytes<1> for FddActive {
         let mut band_868: [u8; 1] = [0; 1];
         band_868[0] |= (val[0] & 0x2) >> 1;
         Self {
-          // BAND_2G4 @ FddActive[0]:
-          band_2g4: FddMode::from_masked_le_bytes(&band_2g4),
-          // BAND_433 @ FddActive[2]:
-          band_433: FddMode::from_masked_le_bytes(&band_433),
-          // BAND_868 @ FddActive[1]:
-          band_868: FddMode::from_masked_le_bytes(&band_868),
+            // BAND_2G4 @ FddActive[0]:
+            band_2g4: FddMode::from_masked_le_bytes(&band_2g4),
+            // BAND_433 @ FddActive[2]:
+            band_433: FddMode::from_masked_le_bytes(&band_433),
+            // BAND_868 @ FddActive[1]:
+            band_868: FddMode::from_masked_le_bytes(&band_868),
         }
     }
 }
@@ -5054,8 +4907,8 @@ impl FromBytes<1> for FddEnable {
         let mut fdd_bands: [u8; 1] = [0; 1];
         fdd_bands[0] |= val[0] & 0x7;
         Self {
-          // FDD_BANDS @ FddEnable[2:0]:
-          fdd_bands: Bands::from_le_bytes(&fdd_bands),
+            // FDD_BANDS @ FddEnable[2:0]:
+            fdd_bands: Bands::from_le_bytes(&fdd_bands),
         }
     }
 }
@@ -5103,12 +4956,12 @@ impl FromBytes<1> for FddExitCond {
         let mut band_868: [u8; 1] = [0; 1];
         band_868[0] |= (val[0] & 0xC) >> 2;
         Self {
-          // BAND_2G4 @ FddExitCond[5:4]:
-          band_2g4: ExitCond::from_masked_le_bytes(&band_2g4),
-          // BAND_433 @ FddExitCond[1:0]:
-          band_433: ExitCond::from_masked_le_bytes(&band_433),
-          // BAND_868 @ FddExitCond[3:2]:
-          band_868: ExitCond::from_masked_le_bytes(&band_868),
+            // BAND_2G4 @ FddExitCond[5:4]:
+            band_2g4: ExitCond::from_masked_le_bytes(&band_2g4),
+            // BAND_433 @ FddExitCond[1:0]:
+            band_433: ExitCond::from_masked_le_bytes(&band_433),
+            // BAND_868 @ FddExitCond[3:2]:
+            band_868: ExitCond::from_masked_le_bytes(&band_868),
         }
     }
 }
@@ -5140,8 +4993,8 @@ impl ToBytes<1> for FifoCount2g4 {
 impl FromBytes<1> for FifoCount2g4 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ FifoCount2g4[5:0]:
-          data: val[0] & 0x3F,
+            // DATA @ FifoCount2g4[5:0]:
+            data: val[0] & 0x3F,
         }
     }
 }
@@ -5173,8 +5026,8 @@ impl ToBytes<1> for FifoCount433 {
 impl FromBytes<1> for FifoCount433 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ FifoCount433[5:0]:
-          data: val[0] & 0x3F,
+            // DATA @ FifoCount433[5:0]:
+            data: val[0] & 0x3F,
         }
     }
 }
@@ -5206,8 +5059,8 @@ impl ToBytes<1> for FifoCount868 {
 impl FromBytes<1> for FifoCount868 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ FifoCount868[5:0]:
-          data: val[0] & 0x3F,
+            // DATA @ FifoCount868[5:0]:
+            data: val[0] & 0x3F,
         }
     }
 }
@@ -5255,12 +5108,12 @@ impl FromBytes<1> for FifoLength {
         let mut band_868: [u8; 1] = [0; 1];
         band_868[0] |= (val[0] & 0xC) >> 2;
         Self {
-          // BAND_2G4 @ FifoLength[5:4]:
-          band_2g4: FifoLen::from_masked_le_bytes(&band_2g4),
-          // BAND_433 @ FifoLength[1:0]:
-          band_433: FifoLen::from_masked_le_bytes(&band_433),
-          // BAND_868 @ FifoLength[3:2]:
-          band_868: FifoLen::from_masked_le_bytes(&band_868),
+            // BAND_2G4 @ FifoLength[5:4]:
+            band_2g4: FifoLen::from_masked_le_bytes(&band_2g4),
+            // BAND_433 @ FifoLength[1:0]:
+            band_433: FifoLen::from_masked_le_bytes(&band_433),
+            // BAND_868 @ FifoLength[3:2]:
+            band_868: FifoLen::from_masked_le_bytes(&band_868),
         }
     }
 }
@@ -5296,8 +5149,8 @@ impl FromBytes<1> for FoQuit {
         let mut quit_bands: [u8; 1] = [0; 1];
         quit_bands[0] |= val[0] & 0x7;
         Self {
-          // QUIT_BANDS @ FoQuit[2:0]:
-          quit_bands: Bands::from_le_bytes(&quit_bands),
+            // QUIT_BANDS @ FoQuit[2:0]:
+            quit_bands: Bands::from_le_bytes(&quit_bands),
         }
     }
 }
@@ -5329,8 +5182,8 @@ impl ToBytes<1> for Genpurp1 {
 impl FromBytes<1> for Genpurp1 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Genpurp1[7:0]:
-          data: val[0],
+            // DATA @ Genpurp1[7:0]:
+            data: val[0],
         }
     }
 }
@@ -5367,8 +5220,8 @@ impl TryFromBytes<1> for IdmBand {
         let mut data: [u8; 1] = [0; 1];
         data[0] |= val[0] & 0x3;
         Ok(Self {
-          // DATA @ IdmBand[1:0]:
-          data: Data::try_from_le_bytes(&data)?,
+            // DATA @ IdmBand[1:0]:
+            data: Data::try_from_le_bytes(&data)?,
         })
     }
 }
@@ -5401,8 +5254,8 @@ impl ToBytes<1> for IdmClr {
 impl FromBytes<1> for IdmClr {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // BRANCH @ IdmClr[0]:
-          branch: val[0] & 0x1 != 0,
+            // BRANCH @ IdmClr[0]:
+            branch: val[0] & 0x1 != 0,
         }
     }
 }
@@ -5438,8 +5291,8 @@ impl FromBytes<1> for IdmCtrl {
         let mut ctrl: [u8; 1] = [0; 1];
         ctrl[0] |= val[0] & 0x3;
         Self {
-          // CTRL @ IdmCtrl[1:0]:
-          ctrl: Ctrl::from_masked_le_bytes(&ctrl),
+            // CTRL @ IdmCtrl[1:0]:
+            ctrl: Ctrl::from_masked_le_bytes(&ctrl),
         }
     }
 }
@@ -5475,8 +5328,8 @@ impl FromBytes<1> for IdmEnable {
         let mut match_bands: [u8; 1] = [0; 1];
         match_bands[0] |= val[0] & 0x7;
         Self {
-          // MATCH_BANDS @ IdmEnable[2:0]:
-          match_bands: Bands::from_le_bytes(&match_bands),
+            // MATCH_BANDS @ IdmEnable[2:0]:
+            match_bands: Bands::from_le_bytes(&match_bands),
         }
     }
 }
@@ -5512,8 +5365,8 @@ impl FromBytes<1> for IdmReason {
         let mut reason: [u8; 1] = [0; 1];
         reason[0] |= val[0] & 0x3;
         Self {
-          // REASON @ IdmReason[1:0]:
-          reason: Reason::from_masked_le_bytes(&reason),
+            // REASON @ IdmReason[1:0]:
+            reason: Reason::from_masked_le_bytes(&reason),
         }
     }
 }
@@ -5545,8 +5398,8 @@ impl ToBytes<1> for IdHi {
 impl FromBytes<1> for IdHi {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ IdHi[7:0]:
-          data: val[0],
+            // DATA @ IdHi[7:0]:
+            data: val[0],
         }
     }
 }
@@ -5578,8 +5431,8 @@ impl ToBytes<1> for IdLo {
 impl FromBytes<1> for IdLo {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ IdLo[7:0]:
-          data: val[0],
+            // DATA @ IdLo[7:0]:
+            data: val[0],
         }
     }
 }
@@ -5615,8 +5468,8 @@ impl FromBytes<1> for IrqClr {
         let mut irq_clr: [u8; 1] = [0; 1];
         irq_clr[0] |= val[0];
         Self {
-          // IRQ_CLR @ IrqClr[7:0]:
-          irq_clr: IrqSource::from_le_bytes(&irq_clr),
+            // IRQ_CLR @ IrqClr[7:0]:
+            irq_clr: IrqSource::from_le_bytes(&irq_clr),
         }
     }
 }
@@ -5652,8 +5505,8 @@ impl FromBytes<1> for IrqSelect {
         let mut irq_select: [u8; 1] = [0; 1];
         irq_select[0] |= val[0];
         Self {
-          // IRQ_SELECT @ IrqSelect[7:0]:
-          irq_select: IrqSource::from_le_bytes(&irq_select),
+            // IRQ_SELECT @ IrqSelect[7:0]:
+            irq_select: IrqSource::from_le_bytes(&irq_select),
         }
     }
 }
@@ -5689,8 +5542,8 @@ impl FromBytes<1> for IrqSet {
         let mut irq_set: [u8; 1] = [0; 1];
         irq_set[0] |= val[0];
         Self {
-          // IRQ_SET @ IrqSet[7:0]:
-          irq_set: IrqSource::from_le_bytes(&irq_set),
+            // IRQ_SET @ IrqSet[7:0]:
+            irq_set: IrqSource::from_le_bytes(&irq_set),
         }
     }
 }
@@ -5736,22 +5589,22 @@ impl ToBytes<1> for IrqSource {
 impl FromBytes<1> for IrqSource {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // CORREL_MATCH @ IrqSource[3]:
-          correl_match: (val[0] & 0x8) >> 3 != 0,
-          // CYCLIC_TIMER_ALARM @ IrqSource[7]:
-          cyclic_timer_alarm: (val[0] & 0x80) >> 7 != 0,
-          // FIFO_FULL @ IrqSource[2]:
-          fifo_full: (val[0] & 0x4) >> 2 != 0,
-          // FIFO_OVERFLOW @ IrqSource[1]:
-          fifo_overflow: (val[0] & 0x2) >> 1 != 0,
-          // ID_MATCH @ IrqSource[0]:
-          id_match: val[0] & 0x1 != 0,
-          // ID_MATCH_AND_FIFO_FULL @ IrqSource[4]:
-          id_match_and_fifo_full: (val[0] & 0x10) >> 4 != 0,
-          // ID_MATCH_AND_LDR @ IrqSource[5]:
-          id_match_and_ldr: (val[0] & 0x20) >> 5 != 0,
-          // RTC_TIMER_ALARM @ IrqSource[6]:
-          rtc_timer_alarm: (val[0] & 0x40) >> 6 != 0,
+            // CORREL_MATCH @ IrqSource[3]:
+            correl_match: (val[0] & 0x8) >> 3 != 0,
+            // CYCLIC_TIMER_ALARM @ IrqSource[7]:
+            cyclic_timer_alarm: (val[0] & 0x80) >> 7 != 0,
+            // FIFO_FULL @ IrqSource[2]:
+            fifo_full: (val[0] & 0x4) >> 2 != 0,
+            // FIFO_OVERFLOW @ IrqSource[1]:
+            fifo_overflow: (val[0] & 0x2) >> 1 != 0,
+            // ID_MATCH @ IrqSource[0]:
+            id_match: val[0] & 0x1 != 0,
+            // ID_MATCH_AND_FIFO_FULL @ IrqSource[4]:
+            id_match_and_fifo_full: (val[0] & 0x10) >> 4 != 0,
+            // ID_MATCH_AND_LDR @ IrqSource[5]:
+            id_match_and_ldr: (val[0] & 0x20) >> 5 != 0,
+            // RTC_TIMER_ALARM @ IrqSource[6]:
+            rtc_timer_alarm: (val[0] & 0x40) >> 6 != 0,
         }
     }
 }
@@ -5787,8 +5640,8 @@ impl FromBytes<1> for IrqStatus {
         let mut irq_status: [u8; 1] = [0; 1];
         irq_status[0] |= val[0];
         Self {
-          // IRQ_STATUS @ IrqStatus[7:0]:
-          irq_status: IrqSource::from_le_bytes(&irq_status),
+            // IRQ_STATUS @ IrqStatus[7:0]:
+            irq_status: IrqSource::from_le_bytes(&irq_status),
         }
     }
 }
@@ -5837,12 +5690,13 @@ impl TryFromBytes<1> for KorrelState {
         let mut korrel_branches_latest: [u8; 1] = [0; 1];
         korrel_branches_latest[0] |= (val[0] & 0xC0) >> 6;
         Ok(Self {
-          // KORREL_BRANCHES_A @ KorrelState[2:0]:
-          korrel_branches_a: Branches::from_le_bytes(&korrel_branches_a),
-          // KORREL_BRANCHES_B @ KorrelState[5:3]:
-          korrel_branches_b: Branches::from_le_bytes(&korrel_branches_b),
-          // KORREL_BRANCHES_LATEST @ KorrelState[7:6]:
-          korrel_branches_latest: KorrelBranchesLatest::try_from_le_bytes(&korrel_branches_latest).map_err(|x| Self::Error {pos: x.pos + 6})?,
+            // KORREL_BRANCHES_A @ KorrelState[2:0]:
+            korrel_branches_a: Branches::from_le_bytes(&korrel_branches_a),
+            // KORREL_BRANCHES_B @ KorrelState[5:3]:
+            korrel_branches_b: Branches::from_le_bytes(&korrel_branches_b),
+            // KORREL_BRANCHES_LATEST @ KorrelState[7:6]:
+            korrel_branches_latest: KorrelBranchesLatest::try_from_le_bytes(&korrel_branches_latest)
+                .map_err(|x| Self::Error { pos: x.pos + 6 })?,
         })
     }
 }
@@ -5875,8 +5729,8 @@ impl ToBytes<1> for KorrelSvClear {
 impl FromBytes<1> for KorrelSvClear {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ KorrelSvClear[0]:
-          data: val[0] & 0x1 != 0,
+            // DATA @ KorrelSvClear[0]:
+            data: val[0] & 0x1 != 0,
         }
     }
 }
@@ -5908,8 +5762,8 @@ impl ToBytes<1> for KorrelThreshA {
 impl FromBytes<1> for KorrelThreshA {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ KorrelThreshA[4:0]:
-          data: val[0] & 0x1F,
+            // DATA @ KorrelThreshA[4:0]:
+            data: val[0] & 0x1F,
         }
     }
 }
@@ -5941,8 +5795,8 @@ impl ToBytes<1> for KorrelThreshB {
 impl FromBytes<1> for KorrelThreshB {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ KorrelThreshB[4:0]:
-          data: val[0] & 0x1F,
+            // DATA @ KorrelThreshB[4:0]:
+            data: val[0] & 0x1F,
         }
     }
 }
@@ -5976,10 +5830,10 @@ impl ToBytes<1> for KorrelVal {
 impl FromBytes<1> for KorrelVal {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // A @ KorrelVal[3:0]:
-          a: val[0] & 0xF,
-          // B @ KorrelVal[7:4]:
-          b: (val[0] & 0xF0) >> 4,
+            // A @ KorrelVal[3:0]:
+            a: val[0] & 0xF,
+            // B @ KorrelVal[7:4]:
+            b: (val[0] & 0xF0) >> 4,
         }
     }
 }
@@ -6011,8 +5865,8 @@ impl ToBytes<1> for LcoFreq2g4Hi {
 impl FromBytes<1> for LcoFreq2g4Hi {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ LcoFreq2g4Hi[7:0]:
-          data: val[0],
+            // DATA @ LcoFreq2g4Hi[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6044,8 +5898,8 @@ impl ToBytes<1> for LcoFreq2g4Lo {
 impl FromBytes<1> for LcoFreq2g4Lo {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ LcoFreq2g4Lo[7:0]:
-          data: val[0],
+            // DATA @ LcoFreq2g4Lo[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6077,8 +5931,8 @@ impl ToBytes<1> for LcoFreq433Hi {
 impl FromBytes<1> for LcoFreq433Hi {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ LcoFreq433Hi[7:0]:
-          data: val[0],
+            // DATA @ LcoFreq433Hi[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6110,8 +5964,8 @@ impl ToBytes<1> for LcoFreq433Lo {
 impl FromBytes<1> for LcoFreq433Lo {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ LcoFreq433Lo[7:0]:
-          data: val[0],
+            // DATA @ LcoFreq433Lo[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6143,8 +5997,8 @@ impl ToBytes<1> for LcoFreq868Hi {
 impl FromBytes<1> for LcoFreq868Hi {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ LcoFreq868Hi[7:0]:
-          data: val[0],
+            // DATA @ LcoFreq868Hi[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6176,8 +6030,8 @@ impl ToBytes<1> for LcoFreq868Lo {
 impl FromBytes<1> for LcoFreq868Lo {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ LcoFreq868Lo[7:0]:
-          data: val[0],
+            // DATA @ LcoFreq868Lo[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6209,8 +6063,8 @@ impl ToBytes<1> for LcTgEna {
 impl FromBytes<1> for LcTgEna {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ LcTgEna[0]:
-          data: val[0] & 0x1 != 0,
+            // DATA @ LcTgEna[0]:
+            data: val[0] & 0x1 != 0,
         }
     }
 }
@@ -6235,7 +6089,7 @@ impl ToBytes<1> for LdoXtalCtrl {
         let mut val: [u8; 1] = [0; 1];
         // INT @ LdoXtalCtrl[1:0]:
         val[0] |= 0x3; // Fixed value.
-        // LDO_ENA_NFA @ LdoXtalCtrl[5]:
+                       // LDO_ENA_NFA @ LdoXtalCtrl[5]:
         val[0] |= ((u8::from(self.ldo_ena_nfa) << 5) & 0x20) as u8;
         // XTAL_OSC_BYP @ LdoXtalCtrl[3]:
         val[0] |= ((u8::from(self.xtal_osc_byp) << 3) & 0x8) as u8;
@@ -6246,10 +6100,10 @@ impl ToBytes<1> for LdoXtalCtrl {
 impl FromBytes<1> for LdoXtalCtrl {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // LDO_ENA_NFA @ LdoXtalCtrl[5]:
-          ldo_ena_nfa: (val[0] & 0x20) >> 5 != 0,
-          // XTAL_OSC_BYP @ LdoXtalCtrl[3]:
-          xtal_osc_byp: (val[0] & 0x8) >> 3 != 0,
+            // LDO_ENA_NFA @ LdoXtalCtrl[5]:
+            ldo_ena_nfa: (val[0] & 0x20) >> 5 != 0,
+            // XTAL_OSC_BYP @ LdoXtalCtrl[3]:
+            xtal_osc_byp: (val[0] & 0x8) >> 3 != 0,
         }
     }
 }
@@ -6286,8 +6140,8 @@ impl TryFromBytes<1> for MuxDOutSel {
         let mut out: [u8; 1] = [0; 1];
         out[0] |= val[0] & 0xF;
         Ok(Self {
-          // OUT @ MuxDOutSel[3:0]:
-          out: Out::try_from_le_bytes(&out)?,
+            // OUT @ MuxDOutSel[3:0]:
+            out: Out::try_from_le_bytes(&out)?,
         })
     }
 }
@@ -6324,8 +6178,8 @@ impl FromBytes<1> for Nfa2g4Fast {
         let mut data: [u8; 1] = [0; 1];
         data[0] |= val[0] & 0x7;
         Self {
-          // DATA @ Nfa2g4Fast[2:0]:
-          data: SampleRate::from_masked_le_bytes(&data),
+            // DATA @ Nfa2g4Fast[2:0]:
+            data: SampleRate::from_masked_le_bytes(&data),
         }
     }
 }
@@ -6361,8 +6215,8 @@ impl FromBytes<1> for Nfa2g4Slow {
         let mut data: [u8; 1] = [0; 1];
         data[0] |= val[0] & 0x7;
         Self {
-          // DATA @ Nfa2g4Slow[2:0]:
-          data: SampleRate::from_masked_le_bytes(&data),
+            // DATA @ Nfa2g4Slow[2:0]:
+            data: SampleRate::from_masked_le_bytes(&data),
         }
     }
 }
@@ -6398,8 +6252,8 @@ impl FromBytes<1> for Nfa433Fast {
         let mut data: [u8; 1] = [0; 1];
         data[0] |= val[0] & 0x7;
         Self {
-          // DATA @ Nfa433Fast[2:0]:
-          data: SampleRate::from_masked_le_bytes(&data),
+            // DATA @ Nfa433Fast[2:0]:
+            data: SampleRate::from_masked_le_bytes(&data),
         }
     }
 }
@@ -6435,8 +6289,8 @@ impl FromBytes<1> for Nfa433Slow {
         let mut data: [u8; 1] = [0; 1];
         data[0] |= val[0] & 0x7;
         Self {
-          // DATA @ Nfa433Slow[2:0]:
-          data: SampleRate::from_masked_le_bytes(&data),
+            // DATA @ Nfa433Slow[2:0]:
+            data: SampleRate::from_masked_le_bytes(&data),
         }
     }
 }
@@ -6472,8 +6326,8 @@ impl FromBytes<1> for Nfa868Fast {
         let mut data: [u8; 1] = [0; 1];
         data[0] |= val[0] & 0x7;
         Self {
-          // DATA @ Nfa868Fast[2:0]:
-          data: SampleRate::from_masked_le_bytes(&data),
+            // DATA @ Nfa868Fast[2:0]:
+            data: SampleRate::from_masked_le_bytes(&data),
         }
     }
 }
@@ -6509,8 +6363,8 @@ impl FromBytes<1> for Nfa868Slow {
         let mut data: [u8; 1] = [0; 1];
         data[0] |= val[0] & 0x7;
         Self {
-          // DATA @ Nfa868Slow[2:0]:
-          data: SampleRate::from_masked_le_bytes(&data),
+            // DATA @ Nfa868Slow[2:0]:
+            data: SampleRate::from_masked_le_bytes(&data),
         }
     }
 }
@@ -6542,8 +6396,8 @@ impl ToBytes<1> for NLcoTarget2g4Hi {
 impl FromBytes<1> for NLcoTarget2g4Hi {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ NLcoTarget2g4Hi[7:0]:
-          data: val[0],
+            // DATA @ NLcoTarget2g4Hi[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6575,8 +6429,8 @@ impl ToBytes<1> for NLcoTarget2g4Lo {
 impl FromBytes<1> for NLcoTarget2g4Lo {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ NLcoTarget2g4Lo[7:0]:
-          data: val[0],
+            // DATA @ NLcoTarget2g4Lo[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6608,8 +6462,8 @@ impl ToBytes<1> for NLcoTarget433Hi {
 impl FromBytes<1> for NLcoTarget433Hi {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ NLcoTarget433Hi[7:0]:
-          data: val[0],
+            // DATA @ NLcoTarget433Hi[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6641,8 +6495,8 @@ impl ToBytes<1> for NLcoTarget433Lo {
 impl FromBytes<1> for NLcoTarget433Lo {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ NLcoTarget433Lo[7:0]:
-          data: val[0],
+            // DATA @ NLcoTarget433Lo[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6674,8 +6528,8 @@ impl ToBytes<1> for NLcoTarget868Hi {
 impl FromBytes<1> for NLcoTarget868Hi {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ NLcoTarget868Hi[7:0]:
-          data: val[0],
+            // DATA @ NLcoTarget868Hi[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6707,8 +6561,8 @@ impl ToBytes<1> for NLcoTarget868Lo {
 impl FromBytes<1> for NLcoTarget868Lo {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ NLcoTarget868Lo[7:0]:
-          data: val[0],
+            // DATA @ NLcoTarget868Lo[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6740,8 +6594,8 @@ impl ToBytes<1> for NSpgTarget {
 impl FromBytes<1> for NSpgTarget {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ NSpgTarget[7:0]:
-          data: val[0],
+            // DATA @ NSpgTarget[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6779,14 +6633,14 @@ impl ToBytes<1> for Rtc {
 impl FromBytes<1> for Rtc {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // RTCLG0 @ Rtc[2]:
-          rtclg0: (val[0] & 0x4) >> 2 != 0,
-          // RTCLG1 @ Rtc[3]:
-          rtclg1: (val[0] & 0x8) >> 3 != 0,
-          // RTCSH0 @ Rtc[0]:
-          rtcsh0: val[0] & 0x1 != 0,
-          // RTCSH1 @ Rtc[1]:
-          rtcsh1: (val[0] & 0x2) >> 1 != 0,
+            // RTCLG0 @ Rtc[2]:
+            rtclg0: (val[0] & 0x4) >> 2 != 0,
+            // RTCLG1 @ Rtc[3]:
+            rtclg1: (val[0] & 0x8) >> 3 != 0,
+            // RTCSH0 @ Rtc[0]:
+            rtcsh0: val[0] & 0x1 != 0,
+            // RTCSH1 @ Rtc[1]:
+            rtcsh1: (val[0] & 0x2) >> 1 != 0,
         }
     }
 }
@@ -6818,8 +6672,8 @@ impl ToBytes<1> for Rtclg0Thresh0 {
 impl FromBytes<1> for Rtclg0Thresh0 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Rtclg0Thresh0[7:0]:
-          data: val[0],
+            // DATA @ Rtclg0Thresh0[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6851,8 +6705,8 @@ impl ToBytes<1> for Rtclg0Thresh1 {
 impl FromBytes<1> for Rtclg0Thresh1 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Rtclg0Thresh1[7:0]:
-          data: val[0],
+            // DATA @ Rtclg0Thresh1[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6884,8 +6738,8 @@ impl ToBytes<1> for Rtclg0Thresh2 {
 impl FromBytes<1> for Rtclg0Thresh2 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Rtclg0Thresh2[7:0]:
-          data: val[0],
+            // DATA @ Rtclg0Thresh2[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6917,8 +6771,8 @@ impl ToBytes<1> for Rtclg0Thresh3 {
 impl FromBytes<1> for Rtclg0Thresh3 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Rtclg0Thresh3[7:0]:
-          data: val[0],
+            // DATA @ Rtclg0Thresh3[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6950,8 +6804,8 @@ impl ToBytes<1> for Rtclg0Thresh4 {
 impl FromBytes<1> for Rtclg0Thresh4 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Rtclg0Thresh4[7:0]:
-          data: val[0],
+            // DATA @ Rtclg0Thresh4[7:0]:
+            data: val[0],
         }
     }
 }
@@ -6983,8 +6837,8 @@ impl ToBytes<1> for Rtclg1Thresh0 {
 impl FromBytes<1> for Rtclg1Thresh0 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Rtclg1Thresh0[7:0]:
-          data: val[0],
+            // DATA @ Rtclg1Thresh0[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7016,8 +6870,8 @@ impl ToBytes<1> for Rtclg1Thresh1 {
 impl FromBytes<1> for Rtclg1Thresh1 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Rtclg1Thresh1[7:0]:
-          data: val[0],
+            // DATA @ Rtclg1Thresh1[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7049,8 +6903,8 @@ impl ToBytes<1> for Rtclg1Thresh2 {
 impl FromBytes<1> for Rtclg1Thresh2 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Rtclg1Thresh2[7:0]:
-          data: val[0],
+            // DATA @ Rtclg1Thresh2[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7082,8 +6936,8 @@ impl ToBytes<1> for Rtclg1Thresh3 {
 impl FromBytes<1> for Rtclg1Thresh3 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Rtclg1Thresh3[7:0]:
-          data: val[0],
+            // DATA @ Rtclg1Thresh3[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7115,8 +6969,8 @@ impl ToBytes<1> for Rtclg1Thresh4 {
 impl FromBytes<1> for Rtclg1Thresh4 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Rtclg1Thresh4[7:0]:
-          data: val[0],
+            // DATA @ Rtclg1Thresh4[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7148,8 +7002,8 @@ impl ToBytes<1> for Rtcsh0ThreshHi {
 impl FromBytes<1> for Rtcsh0ThreshHi {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Rtcsh0ThreshHi[7:0]:
-          data: val[0],
+            // DATA @ Rtcsh0ThreshHi[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7181,8 +7035,8 @@ impl ToBytes<1> for Rtcsh0ThreshLo {
 impl FromBytes<1> for Rtcsh0ThreshLo {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Rtcsh0ThreshLo[7:0]:
-          data: val[0],
+            // DATA @ Rtcsh0ThreshLo[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7214,8 +7068,8 @@ impl ToBytes<1> for Rtcsh1ThreshHi {
 impl FromBytes<1> for Rtcsh1ThreshHi {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Rtcsh1ThreshHi[7:0]:
-          data: val[0],
+            // DATA @ Rtcsh1ThreshHi[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7247,8 +7101,8 @@ impl ToBytes<1> for Rtcsh1ThreshLo {
 impl FromBytes<1> for Rtcsh1ThreshLo {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ Rtcsh1ThreshLo[7:0]:
-          data: val[0],
+            // DATA @ Rtcsh1ThreshLo[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7284,8 +7138,8 @@ impl FromBytes<1> for RtcClr {
         let mut rtc_clr: [u8; 1] = [0; 1];
         rtc_clr[0] |= val[0] & 0xF;
         Self {
-          // RTC_CLR @ RtcClr[3:0]:
-          rtc_clr: Rtc::from_le_bytes(&rtc_clr),
+            // RTC_CLR @ RtcClr[3:0]:
+            rtc_clr: Rtc::from_le_bytes(&rtc_clr),
         }
     }
 }
@@ -7323,10 +7177,10 @@ impl FromBytes<1> for RtcSelect {
         let mut rtc_select: [u8; 1] = [0; 1];
         rtc_select[0] |= val[0] & 0xF;
         Self {
-          // CYCLTOP @ RtcSelect[4]:
-          cycltop: (val[0] & 0x10) >> 4 != 0,
-          // RTC_SELECT @ RtcSelect[3:0]:
-          rtc_select: Rtc::from_le_bytes(&rtc_select),
+            // CYCLTOP @ RtcSelect[4]:
+            cycltop: (val[0] & 0x10) >> 4 != 0,
+            // RTC_SELECT @ RtcSelect[3:0]:
+            rtc_select: Rtc::from_le_bytes(&rtc_select),
         }
     }
 }
@@ -7362,8 +7216,8 @@ impl FromBytes<1> for RtcStatus {
         let mut rtc_select: [u8; 1] = [0; 1];
         rtc_select[0] |= val[0] & 0xF;
         Self {
-          // RTC_SELECT @ RtcStatus[3:0]:
-          rtc_select: Rtc::from_le_bytes(&rtc_select),
+            // RTC_SELECT @ RtcStatus[3:0]:
+            rtc_select: Rtc::from_le_bytes(&rtc_select),
         }
     }
 }
@@ -7395,8 +7249,8 @@ impl ToBytes<1> for RxFifo02g4 {
 impl FromBytes<1> for RxFifo02g4 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo02g4[7:0]:
-          data: val[0],
+            // DATA @ RxFifo02g4[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7428,8 +7282,8 @@ impl ToBytes<1> for RxFifo0433 {
 impl FromBytes<1> for RxFifo0433 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo0433[7:0]:
-          data: val[0],
+            // DATA @ RxFifo0433[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7461,8 +7315,8 @@ impl ToBytes<1> for RxFifo0868 {
 impl FromBytes<1> for RxFifo0868 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo0868[7:0]:
-          data: val[0],
+            // DATA @ RxFifo0868[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7494,8 +7348,8 @@ impl ToBytes<1> for RxFifo12g4 {
 impl FromBytes<1> for RxFifo12g4 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo12g4[7:0]:
-          data: val[0],
+            // DATA @ RxFifo12g4[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7527,8 +7381,8 @@ impl ToBytes<1> for RxFifo1433 {
 impl FromBytes<1> for RxFifo1433 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo1433[7:0]:
-          data: val[0],
+            // DATA @ RxFifo1433[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7560,8 +7414,8 @@ impl ToBytes<1> for RxFifo1868 {
 impl FromBytes<1> for RxFifo1868 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo1868[7:0]:
-          data: val[0],
+            // DATA @ RxFifo1868[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7593,8 +7447,8 @@ impl ToBytes<1> for RxFifo22g4 {
 impl FromBytes<1> for RxFifo22g4 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo22g4[7:0]:
-          data: val[0],
+            // DATA @ RxFifo22g4[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7626,8 +7480,8 @@ impl ToBytes<1> for RxFifo2433 {
 impl FromBytes<1> for RxFifo2433 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo2433[7:0]:
-          data: val[0],
+            // DATA @ RxFifo2433[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7659,8 +7513,8 @@ impl ToBytes<1> for RxFifo2868 {
 impl FromBytes<1> for RxFifo2868 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo2868[7:0]:
-          data: val[0],
+            // DATA @ RxFifo2868[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7692,8 +7546,8 @@ impl ToBytes<1> for RxFifo32g4 {
 impl FromBytes<1> for RxFifo32g4 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo32g4[7:0]:
-          data: val[0],
+            // DATA @ RxFifo32g4[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7725,8 +7579,8 @@ impl ToBytes<1> for RxFifo3433 {
 impl FromBytes<1> for RxFifo3433 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo3433[7:0]:
-          data: val[0],
+            // DATA @ RxFifo3433[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7758,8 +7612,8 @@ impl ToBytes<1> for RxFifo3868 {
 impl FromBytes<1> for RxFifo3868 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo3868[7:0]:
-          data: val[0],
+            // DATA @ RxFifo3868[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7791,8 +7645,8 @@ impl ToBytes<1> for RxFifo42g4 {
 impl FromBytes<1> for RxFifo42g4 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo42g4[7:0]:
-          data: val[0],
+            // DATA @ RxFifo42g4[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7824,8 +7678,8 @@ impl ToBytes<1> for RxFifo4433 {
 impl FromBytes<1> for RxFifo4433 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo4433[7:0]:
-          data: val[0],
+            // DATA @ RxFifo4433[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7857,8 +7711,8 @@ impl ToBytes<1> for RxFifo4868 {
 impl FromBytes<1> for RxFifo4868 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo4868[7:0]:
-          data: val[0],
+            // DATA @ RxFifo4868[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7890,8 +7744,8 @@ impl ToBytes<1> for RxFifo52g4 {
 impl FromBytes<1> for RxFifo52g4 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo52g4[7:0]:
-          data: val[0],
+            // DATA @ RxFifo52g4[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7923,8 +7777,8 @@ impl ToBytes<1> for RxFifo5433 {
 impl FromBytes<1> for RxFifo5433 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo5433[7:0]:
-          data: val[0],
+            // DATA @ RxFifo5433[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7956,8 +7810,8 @@ impl ToBytes<1> for RxFifo5868 {
 impl FromBytes<1> for RxFifo5868 {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ RxFifo5868[7:0]:
-          data: val[0],
+            // DATA @ RxFifo5868[7:0]:
+            data: val[0],
         }
     }
 }
@@ -7988,8 +7842,7 @@ impl ToBytes<1> for Version {
 
 impl FromBytes<1> for Version {
     fn from_le_bytes(_val: &[u8; 1]) -> Self {
-        Self {
-        }
+        Self {}
     }
 }
 
@@ -8020,8 +7873,8 @@ impl ToBytes<1> for XtalGood {
 impl FromBytes<1> for XtalGood {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ XtalGood[0]:
-          data: val[0] & 0x1 != 0,
+            // DATA @ XtalGood[0]:
+            data: val[0] & 0x1 != 0,
         }
     }
 }
@@ -8053,8 +7906,8 @@ impl ToBytes<1> for XtalOscCtrl {
 impl FromBytes<1> for XtalOscCtrl {
     fn from_le_bytes(val: &[u8; 1]) -> Self {
         Self {
-          // DATA @ XtalOscCtrl[0]:
-          data: val[0] & 0x1 != 0,
+            // DATA @ XtalOscCtrl[0]:
+            data: val[0] & 0x1 != 0,
         }
     }
 }

@@ -10,7 +10,6 @@ license = "LGPL-3.0"
 [dependencies]
 embedded-hal = "1.0.0"
 embedded-hal-async = "1.0.0"
-heapless = "0.8.0"
 maybe-async = "0.2.10"
 defmt = { version = "0.3", optional = true }
 
