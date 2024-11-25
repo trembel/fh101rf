@@ -2,6 +2,7 @@
 #+AUTHOR: Jonah Imfeld, Silvano Cortesi
 #+DATE: 01.11.2024
 #+EMAIL: silvano.cortesi@pbl.ee.ethz.ch
+#+LICENSE: LGPL-3.0
 
 This repository contains driver for the FH101RF tri-band Wake-Up Radio (433MHz, 868/915MHz, 2.4GHz).
 
@@ -9,32 +10,50 @@ This repository contains driver for the FH101RF tri-band Wake-Up Radio (433MHz, 
 The FH101RF RFicient ® Ultra-low Power Wake-Up Receiver is a tri-band receiver for simultaneous reception of OOK modulated signals in the SRD frequency bands 433 MHz, 868 MHz or 915 MHz, and 2.4 GHz, with a sensitivity of typically -75 dBm. It allows continuous monitoring at microwatt power consumption and responds in milliseconds, enabling 24/7 connectivity and up to 10 years of battery life. The integrated ULP receiver operates without a microcontroller, recognizing two wake-up patterns and a 16-bit ID. It generates a control signal to activate application hardware like an MCU, allowing direct addressing of individual RF modules. Data packets are stored in three built-in FIFO buffers, and data events can trigger an IRQ signal for external circuitry, supporting deep-sleep modes for peripherals. RFicient ® uses binary correlators to detect 31-bit preambles, tolerating bit-error rates up to 16 %. -- [[https://www.iis.fraunhofer.de/de/ff/sse/ic-design/rf-ic/wakeup.html][Frauenhofer IIS]]
 #+end_quote
 
-The repository contains:
-- The [[file:fh101rf.yaml][YAML]] specification of the driver, as used by Reginald to create the struct fields
+The repository is build on top of the datasheet [[https://cdn.shopify.com/s/files/1/0315/0879/1435/files/FH101RF_LZE_Datasheet_Revision_1p3b_A_1.pdf?v=1722410333][FH101RF_LZE_Datasheet_Revision_1p3b_A_1]] and contains:
 
-** YAML Transpile Instruction
+** The [[file:fh101rf.yaml][YAML]] specification of the driver, as used by Reginald to create the struct fields
+*** YAML Transpile Instruction
 The yaml file can be automatically parsed using [[https://github.com/schilkp/reginald][Reginald]], based on branch ~schilkp/rust~, commit ~dc4ff0d~.
 
-*** Rust version
+**** Rust version
 The rust version is built (from within [[file:rust/src/][rust/src/]]) using:
 #+begin_src sh
 reginald gen -i ../../fh101rf.yaml -o registers.rs rs-structs --enum-derive "Debug" --struct-derive "Debug"
 #+end_src
 
-*** C version
+**** C version
 The C version is built (from within [[file:c/][c/]]) using:
 #+begin_src sh
 reginald gen -i ../fh101rf.yaml -o fh101rf_reg.h c-funcpack
 #+end_src
 
-*** Markdown Datasheet
+**** Markdown Datasheet
 The [[file:fh101rf_reg.md][markdown datasheet]] is build (from within [[file:README.org][/]]) by using:
 #+begin_src sh
 reginald gen -i ./fh101rf.yaml -o fh101rf_reg.md md-datasheet
 #+end_src
 
 ** Rust driver
-The rust driver consists of [[file:rust/src/registers.rs][registers.rs]] and [[file:rust/src/lib.rs][lib.rs]]. ~lib.rs~ is not automatically generated, and contains a struct holding all registers of the chip, as well as providing to/from implementations to a byte array of the whole struct.
+The rust driver consists of [[file:rust/src/lib.rs][lib.rs]], [[file:rust/src/device.rs][device.rs]], [[file:rust/src/config.rs][config.rs]], [[file:rust/src/error.rs][error.rs]] and [[file:rust/src/registers.rs][registers.rs]]. ~registers.rs~ is the only auto-created file using reginald, and contains the register structs as well as pack/unpack functions.
 
 ** C driver
-The C driver consists of [[file:c/fh101rf_reg.h][fh101rf_reg.h]] and [[file:c/fh101rf.h][fh101rf.h]]. ~fh101rf.h~ is not automatically generated, and contains a struct holding all registers of the chip, as well as providing pack/unpack implementations to a byte array of the whole struct.
+The C driver consists of [[file:c/fh101rf.c][fh101rf.c]], [[file:c/fh101rf.h][fh101rf.h]] and [[file:c/fh101rf_reg.h][fh101rf_reg.h]]. ~fh101rf_reg.h~ is the only auto-created file using reginald, and contains the register structs as well as pack/unpack functions.
+
+** Example projects for C and Rust
+The example projects make automatically use of the drivers described above, and can be used as a reference for the implementation. The following pinout holds:
+
+| Peripheral | Functionality                         |
+|------------+---------------------------------------|
+| SPI1       | SPI peripheral used for communication |
+| PA5        | SCK pin used together with SPI1       |
+| PA7        | MOSI pin used together with SPI1      |
+| PA6        | MISO pin used together with SPI1      |
+| PC9        | CS pin used for SPI                   |
+| PC6        | RST pin                               |
+| PC7        | IRQ pin (GPO1)                        |
+| GPDMA1_CH0 | DMA channel for TX on SPI1            |
+| GPDMA1_CH1 | DMA channel for RX on SPI1            |
+
+- *Note:* The C example does not use the MISO pin, but uses the SPI peripheral in Half-Duplex mode
+- *Note:* The R example does use MOSI and MISO pin (SPI in Full-Duplex), thus must be connected as in chapter 6.2 of the datasheet

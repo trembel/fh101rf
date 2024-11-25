@@ -2,10 +2,11 @@
  * @file fh101rf.h
  * @brief FH101RF Driver
  *
- * Listing file author: Silvano Cortesi
+ * Listing file author: Jonah Imfeld, Silvano Cortesi
  *
  * Listing file notice:
- *   Licensed under TBD
+ *   Licensed under LGPL-3.0
+ *   File Version: 1.0.0
  */
 
 #ifndef FH101RF_H

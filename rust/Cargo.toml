@@ -1,11 +1,14 @@
 [package]
 name = "fh101rf"
-version = "0.0.1"
+version = "1.0.0"
 authors = ["Silvano Cortesi <silvano.cortesi@hotmail.com>, Jonah Imfeld"]
 description = "Driver crate for the FH101RF Wake-Up Radio"
-categories = ["embedded", "no-std"]
+categories = ["embedded", "hardware-support", "no-std"]
+keywords = ["embedded-hal-driver", "no-std", "sensor", "radio"]
 edition = "2021"
 license = "LGPL-3.0"
+repository = "https://github.com/trembel/fh101rf"
+readme = "../README.org"
 
 [dependencies]
 embedded-hal = "1.0.0"
