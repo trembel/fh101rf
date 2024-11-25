@@ -30,8 +30,3 @@ flash: build
 
 flash_release: build_release
 	{{EXE_FLASH}} run --chip {{TARGET_MCU}} {{BUILD_DIR}}/release/{{TARGET}}
-
-bear: configure
-	@echo Generating compile_commands...
-	cd {{BUILD_DIR}}/debug && bear -- make
-	@mv {{BUILD_DIR}}/debug/compile_commands.json ./

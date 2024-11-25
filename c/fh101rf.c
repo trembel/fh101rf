@@ -148,7 +148,7 @@ fh101rf_err_t fh101rf_init(struct fh101rf_h *h) {
   return err;
 }
 
-fh101rf_err_t fh101rf_irq_clear(struct fh101rf_h *h) {
+fh101rf_err_t fh101rf_clear_irq(struct fh101rf_h *h) {
   uint8_t data = 0;
   struct fh101rf_irq_clr clr = {.irq_clr = {
                                     .correl_match = true,
@@ -162,6 +162,26 @@ fh101rf_err_t fh101rf_irq_clear(struct fh101rf_h *h) {
                                 }};
   fh101rf_irq_clr_pack_le(&clr, &data);
   return fh101rf_write_reg(h, FH101RF_IRQ_CLR_ADDRESS, data);
+}
+
+fh101rf_err_t fh101rf_read_genpurp(struct fh101rf_h *h) {
+  fh101rf_err_t err = E_FH101RF_SUCCESS;
+  uint8_t result = 0;
+  err |= fh101rf_read_reg(h, FH101RF_GENPURP_1_ADDRESS, &result);
+  if (err) {
+    DRVR_ERR("Failed to readout Genpurp 1 register");
+    return err;
+  }
+  struct fh101rf_genpurp_1 genpurp = fh101rf_genpurp_1_unpack_be(&result);
+  memcpy(&h->conf.genpurp_1, &genpurp, sizeof(struct fh101rf_genpurp_1));
+
+  return err;
+}
+
+fh101rf_err_t fh101rf_write_genpurp(struct fh101rf_h *h) {
+  uint8_t data = 0;
+  fh101rf_genpurp_1_pack_le(&h->conf.genpurp_1, &data);
+  return fh101rf_write_reg(h, FH101RF_GENPURP_1_ADDRESS, data);
 }
 
 fh101rf_err_t fh101rf_write_reg(const struct fh101rf_h *h, uint8_t reg_adr,

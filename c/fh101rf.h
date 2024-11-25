@@ -249,7 +249,42 @@ fh101rf_err_t fh101rf_init(struct fh101rf_h *h);
  * from
  * @ref fh101rf_err_t.
  */
-fh101rf_err_t fh101rf_irq_clear(struct fh101rf_h *h);
+fh101rf_err_t fh101rf_clear_irq(struct fh101rf_h *h);
+
+/**
+ * @brief Read Genpurp 1 Register.
+ * This function reads the content of the content of the device's genpurp 1
+ * register into the conf struct
+ *
+ * @param h Pointer to the device-specific handle struct.
+ * @return @ref E_FH101RF_SUCCESS if successful, otherwise an error code
+ * from
+ * @ref fh101rf_err_t.
+ */
+fh101rf_err_t fh101rf_read_genpurp(struct fh101rf_h *h);
+
+/**
+ * @brief Write Genpurp 1 Register.
+ * This function writes the content of the conf struct's genpurp reg 1 into the
+ * device
+ *
+ * @param h Pointer to the device-specific handle struct.
+ * @return @ref E_FH101RF_SUCCESS if successful, otherwise an error code
+ * from
+ * @ref fh101rf_err_t.
+ */
+fh101rf_err_t fh101rf_write_genpurp(struct fh101rf_h *h);
+
+/**
+ * @brief Clear IRQ Status.
+ * This function clears the interrupt status
+ *
+ * @param h Pointer to the device-specific handle struct.
+ * @return @ref E_FH101RF_SUCCESS if successful, otherwise an error code
+ * from
+ * @ref fh101rf_err_t.
+ */
+fh101rf_err_t fh101rf_clear_irq(struct fh101rf_h *h);
 
 /**
  * @brief Function to write to a specific register of a device

@@ -185,6 +185,13 @@ int main(void) {
     Error_Handler();
   }
 
+  // change genpurp_1 register to random number
+  dev.conf.genpurp_1.data = 0x5A;
+  err = fh101rf_write_genpurp(&dev);
+  if (err != E_FH101RF_SUCCESS) {
+    Error_Handler();
+  }
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -196,11 +203,18 @@ int main(void) {
     }
     SEGGER_RTT_printf(0, "Got IRQ\r\n");
 
-    err = fh101rf_irq_clear(&dev);
+    err = fh101rf_clear_irq(&dev);
     if (err != E_FH101RF_SUCCESS) {
       SEGGER_RTT_printf(0, "Failed to clear IRQ");
     }
     wur_irq_flag = false;
+
+    // Read genpurp
+    err = fh101rf_read_genpurp(&dev);
+    if (err != E_FH101RF_SUCCESS) {
+      SEGGER_RTT_printf(0, "Failed to read Genpurp 1");
+    }
+    SEGGER_RTT_printf(0, "Read genpurp1: %x\r\n", dev.conf.genpurp_1.data);
 
     /* USER CODE END WHILE */
 
