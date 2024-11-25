@@ -19,7 +19,7 @@ The yaml file can be automatically parsed using [[https://github.com/schilkp/reg
 **** Rust version
 The rust version is built (from within [[file:rust/src/][rust/src/]]) using:
 #+begin_src sh
-reginald gen -i ../../fh101rf.yaml -o registers.rs rs-structs --enum-derive "Debug" --struct-derive "Debug"
+reginald gen -i ../../fh101rf.yaml -o registers.rs rs-structs --enum-derive "Debug" --struct-derive "Debug" --enum-derive "PartialEq" --struct-derive "PartialEq"
 #+end_src
 
 **** C version
@@ -56,4 +56,4 @@ The example projects make automatically use of the drivers described above, and 
 | GPDMA1_CH1 | DMA channel for RX on SPI1            |
 
 - *Note:* The C example does not use the MISO pin, but uses the SPI peripheral in Half-Duplex mode
-- *Note:* The R example does use MOSI and MISO pin (SPI in Full-Duplex), thus must be connected as in chapter 6.2 of the datasheet
+- *Note:* The Rust example does use MOSI and MISO pin (SPI in Full-Duplex), thus must be connected as in chapter 6.2 of the datasheet

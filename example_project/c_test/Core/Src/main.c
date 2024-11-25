@@ -95,7 +95,7 @@ int main(void) {
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  SEGGER_RTT_printf(0, "Starting up FH101R\r\n");
+  SEGGER_RTT_printf(0, "Starting up FH101R Test Application\r\n");
   /* USER CODE END Init */
 
   /* Configure the system clock */

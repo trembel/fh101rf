@@ -46,7 +46,7 @@ fh101rf_err_t lco_calibrate(struct fh101rf_h *h);
 fh101rf_err_t sample_pulse_calibrate(struct fh101rf_h *h);
 fh101rf_err_t comp_calibrate(struct fh101rf_h *h);
 
-fh101rf_err_t write_all_regs(const struct fh101rf_h *h);
+fh101rf_err_t write_cfg_regs(const struct fh101rf_h *h);
 
 // ======== Public Functions
 // =================================================================
@@ -141,9 +141,9 @@ fh101rf_err_t fh101rf_init(struct fh101rf_h *h) {
   }
 
   // Set configuration to device
-  err |= write_all_regs(h);
+  err |= write_cfg_regs(h);
   if (err) {
-    DRVR_ERR("Failed to write all registers");
+    DRVR_ERR("Failed to write all config registers");
   }
 
   return err;
@@ -636,7 +636,7 @@ fh101rf_err_t comp_calibrate(struct fh101rf_h *h) {
 }
 
 // Write all registers to the device
-fh101rf_err_t write_all_regs(const struct fh101rf_h *h) {
+fh101rf_err_t write_cfg_regs(const struct fh101rf_h *h) {
   fh101rf_err_t err = E_FH101RF_SUCCESS;
 
   // Write NFA433_SLOW
