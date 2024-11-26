@@ -6,7 +6,7 @@
  *
  * Listing file notice:
  *   Licensed under LGPL-3.0
- *   File Version: 1.0.0
+ *   File Version: 1.0.1
  */
 
 #ifndef FH101RF_H

@@ -25,7 +25,7 @@ embassy-stm32 = { version = "0.1.0", features = ["defmt", "stm32u545re", "unstab
 embassy-embedded-hal = { version = "0.2.0", features = ["defmt"] }
 embassy-futures = "0.1.1"
 static_cell = "2.1.0"
-fh101rf = { version = "1.0.0", features = ["async", "defmt"], path = "../../rust" }
+fh101rf = { version = "1.0.1", features = ["async", "defmt"], path = "../../rust" }
 
 [patch.crates-io]
 embassy-stm32 = { git = "https://github.com/embassy-rs/embassy" }

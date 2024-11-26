@@ -1,7 +1,6 @@
 #+TITLE: FH101RF Driver
 #+AUTHOR: Jonah Imfeld, Silvano Cortesi
 #+DATE: 01.11.2024
-#+EMAIL: silvano.cortesi@pbl.ee.ethz.ch
 #+LICENSE: LGPL-3.0
 
 This repository contains driver for the FH101RF tri-band Wake-Up Radio (433MHz, 868/915MHz, 2.4GHz).
