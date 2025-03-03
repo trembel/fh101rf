@@ -43,6 +43,9 @@ add_subdirectory(cmake/stm32cubemx)
 # Include segger rtt
 add_subdirectory(Drivers/segger)
 
+# Include fh101rf driver
+add_subdirectory(../../c/ ${CMAKE_BINARY_DIR}/fh101rf_driver)
+
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined library search paths
@@ -51,13 +54,11 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
-    ../../c/fh101rf.c
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
-    ../../c/
 )
 
 # Add project symbols (macros)
@@ -71,6 +72,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
     # Add user defined libraries
     segger_rtt
+    fh101rf_driver
 )
 
 target_link_options(${CMAKE_PROJECT_NAME} PRIVATE
