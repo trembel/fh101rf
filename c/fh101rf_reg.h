@@ -10,7 +10,7 @@
  *
  * Listing file notice:
  *   Licensed under LGPL-3.0
- *   File Version: 1.0.1
+ *   File Version: 1.0.2
  */
 #ifndef REGINALD_FH101RF_REG_H
 #define REGINALD_FH101RF_REG_H

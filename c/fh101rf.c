@@ -6,7 +6,7 @@
  *
  * Listing file notice:
  *   Licensed under LGPL-3.0
- *   File Version: 1.0.1
+ *   File Version: 1.0.2
  */
 
 #include "fh101rf.h"
@@ -150,19 +150,22 @@ fh101rf_err_t fh101rf_init(struct fh101rf_h *h) {
 }
 
 fh101rf_err_t fh101rf_clear_irq(struct fh101rf_h *h) {
+  // SILICON BUG: Only flags already set must be cleared and afterwards it is
+  // needed to reset the clear register
+
+  fh101rf_err_t err = E_FH101RF_SUCCESS;
   uint8_t data = 0;
-  struct fh101rf_irq_clr clr = {.irq_clr = {
-                                    .correl_match = true,
-                                    .id_match = true,
-                                    .id_match_and_fifo_full = true,
-                                    .fifo_overflow = true,
-                                    .fifo_full = true,
-                                    .cyclic_timer_alarm = true,
-                                    .id_match_and_ldr = true,
-                                    .rtc_timer_alarm = true,
-                                }};
-  fh101rf_irq_clr_pack_le(&clr, &data);
-  return fh101rf_write_reg(h, FH101RF_IRQ_CLR_ADDRESS, data);
+  err |= fh101rf_read_reg(h, FH101RF_IRQ_STATUS_ADDRESS, &data);
+  if (data == 0x0) {
+    return err;
+  }
+
+  // Set clear
+  err |= fh101rf_write_reg(h, FH101RF_IRQ_CLR_ADDRESS, data);
+
+  // Reset clear
+  err |= fh101rf_write_reg(h, FH101RF_IRQ_CLR_ADDRESS, 0x0);
+  return err;
 }
 
 fh101rf_err_t fh101rf_read_genpurp(struct fh101rf_h *h) {

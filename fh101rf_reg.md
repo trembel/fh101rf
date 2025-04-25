@@ -9,7 +9,7 @@ Listing file author: Jonah Imfeld, Silvano Cortesi.
 Listing file notice:
 ```
   Licensed under LGPL-3.0
-  File Version: 1.0.1
+  File Version: 1.0.2
 ```
 
 | **Address** | **Register**        | **Reset Value** | **Brief**                                                                                                                                                                                      |

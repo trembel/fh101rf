@@ -10,3 +10,8 @@ target_sources(fh101rf_driver
 )
 
 target_include_directories(fh101rf_driver PUBLIC ${CMAKE_CURRENT_LIST_DIR})
+
+target_compile_options(fh101rf_driver
+    PUBLIC
+    -Wno-unused-parameter
+)

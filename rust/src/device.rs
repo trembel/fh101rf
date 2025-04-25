@@ -122,20 +122,18 @@ where
     /// Function to clear the irq register of the FH101RF
     #[maybe_async_attr]
     pub async fn clear_irq(&mut self) -> Result<(), Error<SPI>> {
-        let clr = IrqClr {
-            irq_clr: IrqSource {
-                correl_match: true,
-                id_match: true,
-                id_match_and_fifo_full: true,
-                fifo_overflow: true,
-                fifo_full: true,
-                cyclic_timer_alarm: true,
-                id_match_and_ldr: true,
-                rtc_timer_alarm: true,
-            },
-        };
+        // SILICON BUG: Only flags already set must be cleared and afterwards it is
+        // needed to reset the clear register
+        let mut irq_stat: u8 = 0;
 
-        self.write_reg(IrqClr::ADDRESS, clr.to_le_bytes()[0]).await
+        self.read_reg(IrqStatus::ADDRESS, &mut irq_stat).await?;
+        if irq_stat == 0 {
+            // early return if status is zero
+            return Ok(());
+        }
+
+        self.write_reg(IrqClr::ADDRESS, irq_stat).await?;
+        self.write_reg(IrqClr::ADDRESS, 0 as u8).await
     }
 
     /// Function to read the GENPURP1 register of the FH101RF. Returns reference to self

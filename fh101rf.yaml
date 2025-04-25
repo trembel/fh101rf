@@ -3,7 +3,7 @@ name: FH101RF
 author: "Jonah Imfeld, Silvano Cortesi"
 notice: |
   Licensed under LGPL-3.0
-  File Version: 1.0.1
+  File Version: 1.0.2
 defaults:
   layout_bitwidth: 8
 
