@@ -9,6 +9,22 @@ This repository contains driver for the FH101RF tri-band Wake-Up Radio (433MHz, 
 The FH101RF RFicient ® Ultra-low Power Wake-Up Receiver is a tri-band receiver for simultaneous reception of OOK modulated signals in the SRD frequency bands 433 MHz, 868 MHz or 915 MHz, and 2.4 GHz, with a sensitivity of typically -75 dBm. It allows continuous monitoring at microwatt power consumption and responds in milliseconds, enabling 24/7 connectivity and up to 10 years of battery life. The integrated ULP receiver operates without a microcontroller, recognizing two wake-up patterns and a 16-bit ID. It generates a control signal to activate application hardware like an MCU, allowing direct addressing of individual RF modules. Data packets are stored in three built-in FIFO buffers, and data events can trigger an IRQ signal for external circuitry, supporting deep-sleep modes for peripherals. RFicient ® uses binary correlators to detect 31-bit preambles, tolerating bit-error rates up to 16 %. -- [[https://www.iis.fraunhofer.de/de/ff/sse/ic-design/rf-ic/wakeup.html][Frauenhofer IIS]]
 #+end_quote
 
+If you use this driver in an academic or industrial context, please cite the following publication:
+
+#+begin_src bibtex
+@misc{schultess25_wakem,
+  author         = {Lukas Schulthess and Silvano Cortesi and Michele Magno},
+  title          = {Wakemod: a 6.9uw Wake-Up Radio Module With -72.6dbm Sensitivity for On-Demand Iot},
+  year           = 2025,
+  doi            = {10.48550/ARXIV.2505.21529},
+  url            = {https://arxiv.org/abs/2505.21529},
+  eprint         = {2505.21529},
+  archiveprefix  = {arXiv},
+  primaryclass   = {cs.NI},
+  DATE_ADDED     = {Sun Jun 1 12:42:45 2025},
+}
+#+end_src
+
 The repository is build on top of the datasheet [[https://cdn.shopify.com/s/files/1/0315/0879/1435/files/FH101RF_LZE_Datasheet_Revision_1p3b_A_1.pdf?v=1722410333][FH101RF_LZE_Datasheet_Revision_1p3b_A_1]] and contains:
 
 ** The [[file:fh101rf.yaml][YAML]] specification of the driver, as used by Reginald to create the struct fields
